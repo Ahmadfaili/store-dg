@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.flipTimer.js"></script>
+    <link href="css/flipTimer.css" rel="stylesheet">
+</head>
+<body>
+<div class="flipTimer">
+
+    <div class="hours"></div>
+    <div class="minutes"></div>
+    <div class="seconds"></div>
+</div>
+<style>
+    .flipTimer, .flipTimer div {
+        direction: ltr !important;
+    }
+    .flipTimer .digit-wrap{
+        line-height: 100px;
+    }
+
+    .flipTimer {
+        transform: scale(.3);
+        position: absolute;
+        top: 207px;
+        right: -146px;
+    }
+</style>
+<script>
+    $('.flipTimer').flipTimer({
+        direction: 'down',
+        date: 'june 19,2018 24:00:00',
+        minutes:false,
+        callback: function () {
+
+
+            $(".slider2_content_right").css('opacity', .4);
+            $('.slider2_content_left').css('opacity', .4);
+            $('.slider2_finished img').fadeIn(200);
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

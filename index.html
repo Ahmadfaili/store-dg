@@ -1,0 +1,2715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>فروشگاه اینترنتی دی جی کالا </title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.flipTimer.js"></script>
+    <link href="css/flipTimer.css" rel="stylesheet">
+</head>
+<body style="margin: 0;background: #eeeeee">
+
+
+<style>
+
+
+    @font-face {
+        font-family: 'yekan';
+        src: url('fonts/yekan.ttf') format('truetype'),
+        url(fonts/yekan.eot?#iefix) format("embedded-opentype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    div, ul, li, span, p, a {
+        text-align: right;
+        direction: rtl;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .yekan {
+        font-family: yekan;
+    }
+
+    .fontsm {
+        font-size: 12.3pt;
+    }
+
+    .fontmd {
+        font-size: 13.3pt;
+    }
+
+    .fontlg {
+        font-size: 14.3pt;
+    }
+
+</style>
+
+
+<header style="background: #fff;min-width: 1200px">
+
+
+    <div id="header" style="width: 1200px;height:100px;margin: 0 auto;padding-top:10px;display: block;">
+        <div id="header_right" style="width: 720px;float: right;height: 100px;margin: 0 7px">
+            <div id="header_right_top" style="height: 40px;">
+                <span style="width: 20px;height: 20px;background: url(images/lock.png);display: block;float: right">
+
+                </span>
+
+                <a class="yekan fontsm" href="/login " style="float: right;margin-right: 10px;">
+                    فروشگاه اینترنتی دیجی کالا,وارد شوید
+                </a>
+                <span style="width: 20px;height: 20px;background: url(images/singup.png);display: block;float: right;margin-right: 20px">
+
+                </span>
+                <a class="yekan fontsm" href="register" style="float: right;margin-right: 10px ">
+                    ثبت نام کنید
+                </a>
+            </div>
+            <div id="header_right_bottom" style="height: 50px;">
+                <div id="basket_top" style="width: 190px;height: 40px;float: right;">
+                    <div id="basket_top_right" style="width: 54px;height: 100%;background:#15bb23
+                    url(images/basket.png)no-repeat center;float: right">
+                    </div>
+
+                    <div id="basket_top_left" style="width: 96px;height: 100%;background: #12a520;float: right;
+                    padding: 0 20px;line-height: 36px;">
+                        <span class="yekan fontsm" style="color: #fff">سبد خرید</span>
+                        <span class="fontsm" style="width: 25px;height: 25px;background: #5fbf63;color: #fff;text-align: center;display: block;
+                      float: left;margin-top: 7px;border-radius: 100%;line-height: 25px;">0</span>
+                    </div>
+                </div>
+
+                <div id="search_top"
+                     style="width: 480px;height: 40px;float: right;margin-right: 20px;position: relative">
+                    <input class="yekan fontsm" style="width: 480px;height: 32px;margin-top: 2px;border: 1px solid #eee;border-radius: 2px;
+                    padding-right: 10px;color: #675e61;" placeholder="محصول دسته یا برند مورد نظر را جستجو کنید..."/>
+                    <span style="width: 42px;height: 35px;background: url(images/search.png)no-repeat center #9da3b1;display: block;position: absolute;left: -12px;
+                    top: 2px;border-radius: 2px;"></span>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="header_left" style="float: left">
+            <img src="images/logo.png">
+        </div>
+    </div>
+</header>
+<style>
+
+    nav {
+        box-shadow: 1px 3px 4px #eee;
+        -webkit-box-shadow: 1px 3px 4px #eee;
+        -moz-box-shadow: 1px 3px 4px #eee;
+
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    li {
+        list-style: none
+    }
+
+    #menu_top > ul {
+        position: relative;
+        padding: 0
+    }
+
+    #menu_top > ul > li {
+        float: right;
+        height: 40px;
+    }
+
+    #menu_top > ul > li > a {
+        padding: 0 10px;
+        height: 40px;
+        display: block;
+        line-height: 36px;
+        font-size: 12pt;
+    }
+
+    .menu_down_icon {
+        width: 9px;
+        height: 8px;
+        background: url(images/slices.png);
+        display: inline-block;
+        margin-right: 7px;
+        margin-bottom: -1px;
+    }
+
+    #menu_top > ul > li > ul {
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        width: 1200px;
+        padding: 0;
+        box-shadow: 0 2px 3px #aaa;
+        display: none;
+
+    }
+
+    #menu_top > ul > li > ul > li {
+        float: right;
+    }
+
+    #menu_top > ul > li > ul > li > a {
+        padding: 5px 10px;
+        display: block
+    }
+
+    .top_menu3_col {
+        width: 299px;
+        height: 100%;
+        float: right;
+        border-left: 1px solid #eee;
+    }
+
+    .top_menu3_col_ul li {
+        padding-right: 15px;
+    }
+
+    .top_menu3_col_ul li:first-child {
+        padding-right: 5px;
+        color: #3571c5;
+    }
+
+    .submenu3 {
+        display: none;
+        z-index: 2;
+    }
+
+    .active-menu {
+        background: #fff;
+        box-shadow: 0 -1px 5px #eee;
+    }
+
+    .active-menu > a {
+        color: red;
+    }
+
+    #menu_top {
+        cursor: pointer;
+    }
+
+
+</style>
+
+
+<nav style="min-width: 1200px;height: 40px;background: #f7f8fa;border-top: 1px solid #e4f3f2;box-shadow: 0 2px 3px #aaa;z-index: 3;">
+    <div id="menu_top" style="width: 1200px;height: 40px;margin: auto;">
+        <ul>
+            <li data-time="1">
+                <a class="yekan">
+                    کالای دیجیتال
+                    <span class="menu_down_icon" style="background-position: -35px -729px;"></span>
+                </a>
+                <ul>
+
+                    <li data-time="3">
+                        <a class="yekan">
+                            موبایل
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">گوشی موبایل</li>
+                                    <li class="yekan fontsm">Appel</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/mobile.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+
+                    </li>
+                    <li data-time="4">
+                        <a class="yekan">
+                            تبلت و کتابخوان
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">تبلت</li>
+                                    <li class="yekan fontsm">Appel</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/tablet-ebook-reader.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+                    </li>
+                    <li data-time="5">
+                        <a class="yekan">
+                            لب تاپ
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-time="2">
+                <a class="yekan">
+
+
+                    لوازم خانگی
+                    <span class="menu_down_icon" style="background-position: -35px -729px;"></span>
+                </a>
+                <ul>
+                    <li data-time="6">
+                        <a class="yekan fontsm">
+                            صوتی و تصویری
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">تلویزیون بر اساس سازنده</li>
+                                    <li class="yekan fontsm">LG</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/video-audio-entertainment.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+                    </li>
+                    <li data-time="7">
+                        <a class="yekan fontsm">
+                            لوازم خانگی برقی
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">لوازم پخت پز</li>
+                                    <li class="yekan fontsm">مایکروویو</li>
+                                    <li class="yekan fontsm">اجاق گاز</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/home-appliance.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+        <div class="promotion-badge yekan">
+            <a>پیشنهادهای شگفت انگیز</a>
+            <span></span>
+        </div>
+    </div>
+</nav>
+<style>
+
+    .promotion-badge {
+        width: 180px;
+        height: 40px;
+        background: #ebeff2;
+        color: #656a6e;
+        text-align: center;
+        font-size: 12pt;
+        float: left;
+        display: block;
+        line-height: 39px;
+        position: relative
+
+    }
+
+    .promotion-badge span {
+        width: 17px;
+        height: 17px;
+        background: url(images/slices.png) no-repeat -1219px -388px;
+        display: block;
+        float: right;
+        margin-right: 8px;
+        margin-top: 12px;
+    }
+
+    .promotion-badge a:hover {
+        transition: all .3s ease 0s;
+        color: #000;
+
+    }
+
+    #sidbar_right {
+        width: 290px;
+        float: right;
+        height: 200px
+    }
+
+    #digikala_tv li {
+        margin-bottom: 8px
+    }
+
+    #digikala_tv li a {
+        position: relative;
+        display: block;
+    }
+
+    #digikala_tv li a .image {
+        width: 100%;
+        height: 160px;
+        border-radius: 4px;
+    }
+
+    #digikala_tv li a::before {
+        content: " ";
+        width: 100%;
+        height: 160px;
+        background: rgba(0, 0, 0, .2);
+        display: block;
+        position: absolute;
+        border-radius: 4px;
+    }
+
+    #digikala_tv li .circle {
+        transition: all 1s ease;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 47px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        background: rgba(255, 255, 255, .3);
+        text-align: center;
+    }
+
+    #digikala_tv li:hover .circle {
+        background: rgba(255, 255, 255, .5) !important;
+    }
+
+    #digikala_tv li .play_icon {
+        margin: auto;
+        margin-top: 25px;
+
+    }
+
+    #sidbar_right_ul li img {
+        width: 290px;
+        height: 265px;
+    }
+
+    #sidbar_right_ul li {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+        border-radius: 4px;
+        overflow: hidden;
+        height: 265px;
+        margin-bottom: 4px;
+    }
+
+    #last_news_sidbar {
+        width: 290px;
+        margin-top: 10px;
+        background: #fff;
+
+    }
+
+    #last_news_sidbar {
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    #last_news_sidbar h3 {
+        background: #f7f9fa;
+        height: 40px;
+        color: #506a8e;
+        padding-right: 10px;
+        line-height: 36px;
+        margin: 0;
+    }
+
+    #last_news_sidbar ul li a {
+        padding: 8px;
+        display: block;
+        float: right;
+    }
+
+    #last_news_sidbar .col_right {
+        float: right;
+    }
+
+    #last_news_sidbar .col_right img {
+        border-radius: 50%;
+    }
+
+    #last_news_sidbar .col_left {
+        float: right;
+        width: 190px;
+        padding-right: 13px;
+    }
+
+    #last_news_sidbar p {
+        margin: 0;
+    }
+
+    #slider_right {
+        width: 290px;
+        height: 385px;
+        float: right;
+        margin-top: 10px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #slider_right a {
+        width: 290px;
+        height: 385px;
+        float: right;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider_right_header {
+        background: #f5f5f5 !important;;
+        height: 45px;
+        color: #858585 !important;
+        font-family: yekan;
+        font-size: 13.5pt;
+        text-align: center;
+        line-height: 44px;
+    }
+
+    #slider_right a img {
+        width: 70%;
+        margin: 15px auto;
+        display: block;
+    }
+
+    .name {
+        font-size: 15px;
+        font-family: yekan;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 19px;
+        margin-bottom: 15px;
+    }
+
+    .myProgress {
+        width: 250px;
+        height: 3px;
+        background-color: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-right: 20px;
+        direction: ltr
+    }
+
+    .myBar {
+        width: 0;
+        height: 100%;
+        background-color: red;
+        border-radius: 5px;
+    }
+
+    .slider_right_fotter {
+        width: 100%;
+        height: 70px;
+
+    }
+
+    .slider_right_fotter_left {
+        width: 50%;
+        height: 100%;
+        float: right;
+
+    }
+
+    .slider_right_fotter_left p {
+        width: 70%;
+        height: 75%;
+        font-family: yekan;
+        font-size: 18.5pt;
+        color: red;
+        margin: 0;
+        float: right;
+        margin-right: 17px;
+        margin-top: 15px;
+
+    }
+
+    .slider_right_fotter_left span {
+        width: 18%;
+        height: 63%;
+        float: left;
+        display: block;
+        margin-top: 22px;
+        color: red;
+        font-size: 10.5pt;
+        font-family: yekan;
+
+    }
+
+    .slider_right_fotter_right {
+        width: 90px;
+        height: 37px;
+        font-size: 12pt;
+        font-family: yekan;
+        background: #4cb050;
+        color: #ffffff;
+        float: left;
+        text-align: center;
+        line-height: 35px;
+        margin-left: 20px;
+        margin-top: 16px;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+    }
+</style>
+
+
+<div id="main" style="width: 1200px;margin: 10px auto;">
+    <div id="baner_top" style="width: 1200px;height: 138px">
+        <img style="box-shadow: 0 4px 5px #000;border-radius: 4px;width: 100%;" src="images/baner.gif">
+    </div>
+    <div id="sidbar_right">
+        <div id="slider_right">
+
+            <a class="item">
+
+                <div class="slider_right_header">
+                    <div class="slider_right_header">
+                        پیشنهاد لحظه ای
+                    </div>
+                </div>
+
+                <img src="images/Apple-iPhone-X.jpg">
+                <div class="name">
+                    نرم کننده و ترميم کننده موي ايو روشه مدل Repair-Nutri حجم 150 ميلي ليتر
+                </div>
+                <div class="myProgress">
+                    <div class="myBar"></div>
+                </div>
+
+                <div class="slider_right_fotter">
+
+                    <div class="slider_right_fotter_left">
+                        <p>
+                            1.100.000
+                        </p>
+
+                        <span> تومان</span>
+
+
+                    </div>
+                    <div class="slider_right_fotter_right">
+                        مشاهده
+                    </div>
+
+                </div>
+
+            </a>
+            <a class="item">
+
+                <div class="slider_right_header">
+                    <div class="slider_right_header">
+                        پیشنهاد لحظه ای
+                    </div>
+                </div>
+
+                <img src="images/Apple-iPhone-7-Mobile-Phone---128GB.jpg">
+                <div class="name">
+                    نرم کننده و ترميم کننده موي ايو روشه مدل Repair-Nutri حجم 150 ميلي ليتر
+                </div>
+                <div class="myProgress">
+                    <div class="myBar"></div>
+                </div>
+
+                <div class="slider_right_fotter">
+
+                    <div class="slider_right_fotter_left">
+                        <p>
+                            1.100.000
+                        </p>
+
+                        <span> تومان</span>
+
+
+                    </div>
+                    <div class="slider_right_fotter_right">
+                        مشاهده
+                    </div>
+
+                </div>
+
+            </a>
+        </div>
+
+
+        <img src="images/amozesh.png" style="margin: 10px 0;border-radius: 4px">
+
+        <ul id="digikala_tv" style="padding: 0;">
+            <li>
+                <a>
+                    <img class="image" src="images/aksplay.png">
+                    <span class="circle">
+                        <img class="play_icon" src="images/play.png">
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img class="image" src="images/porsh.jpg">
+                    <span class="circle">
+
+                        <img class="play_icon" src="images/play.png">
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+        <ul id="sidbar_right_ul" style="padding: 0;">
+            <li>
+                <a>
+                    <img src="images/kafsh.jpg">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/tor.jpg">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="images/kohehposhti.jpg">
+                </a>
+            </li>
+        </ul>
+        <div id="last_news_sidbar">
+            <h3 class="yekan fontsm">تازه ترین خبرها</h3>
+            <ul style="padding: 0">
+                <li>
+                    <a>
+                        <div class="col_right">
+                            <img src="images/TV-60x60.jpg" width="70" height="70">
+                        </div>
+                        <div class="col_left">
+                            <p class="yekan fontsm">سامسونگ از تلویزیون های OLED در ایران رونمایی کرد </p>
+                            <p class="yekan" style="font-size: 9pt;color: #8998c0">پنجشنبه 30 شهریور 1396
+                            </p>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div class="col_right">
+                            <img src="images/Wolfenstein_2_The_New_Colossus-60x60.jpg" width="70" height="70">
+                        </div>
+                        <div class="col_left">
+                            <p class="yekan fontsm">تریلر جدی ولفنشتاین 2 را حتما ببینید </p>
+                            <p class="yekan" style="font-size: 9pt;color: #8998c0">پنجشنبه 30 شهریور 1396
+                            </p>
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="berebd_sidbar" style="margin-top: 10px;">
+            <a>
+                <img src="images/x.vision.png">
+            </a>
+            <a>
+                <img src="images/lg.png">
+            </a>
+            <a>
+                <img src="images/oral-b.png">
+            </a>
+            <a>
+                <img src="images/samsung-brand.jpg">
+            </a>
+            <a>
+                <img src="images/snowa-cc6b61.png">
+            </a>
+            <a>
+                <img src="images/pars-khazar-8cdaa4.png">
+            </a>
+
+        </div>
+
+        <style>
+            #berebd_sidbar a {
+                display: block;
+                width: 134px;
+                height: 95px;
+                background: #fff;
+                float: right;
+                margin-left: 10px;
+                margin-top: 4px;
+                border-radius: 4px;
+                overflow: hidden;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+                vertical-align: middle;
+                line-height: 155px;
+
+            }
+
+            #berebd_sidbar a img {
+                width: 100%;
+
+            }
+
+            #berebd_sidbar a:nth-child(even) {
+                margin-left: 0;
+                float: left;
+            }
+        </style>
+
+    </div>
+
+    <style>
+        #slider {
+            height: 310px;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        #slider_img {
+            height: 260px;
+        }
+
+        #slider_img img {
+            height: 260px;
+            width: 100%;
+
+        }
+
+        #slider_img a {
+            display: none;
+        }
+
+        #slider_navigator {
+            height: 50px;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        #slider #prev {
+            width: 19px;
+            height: 33px;
+            position: absolute;
+            display: block;
+            top: 130px;
+            right: 15px;
+            background: url(images/arrow-2.png) no-repeat;
+            background-position: 0 -33px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #slider #next {
+            width: 19px;
+            height: 33px;
+            position: absolute;
+            display: block;
+            top: 130px;
+            left: 15px;
+            background: url(images/arrow-2.png) no-repeat;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #slider #slider_navigator ul {
+            height: 100%;
+            padding: 0;
+        }
+
+        #slider #slider_navigator ul li {
+            width: 178px;
+            height: 100px;
+            float: right;
+        }
+
+        #slider #slider_navigator ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #slider #slider_navigator .active > a {
+            background: #fff;
+            color: #000;
+            position: relative;
+        }
+
+        #slider #slider_navigator .active > a::after {
+            content: " ";
+            position: absolute;
+            top: -13px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 12.5px 13px 12.5px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+
+    </style>
+    <div id="content" style="width: 890px;float: left;margin-top: 10px">
+        <div id="slider" style="position: relative;">
+
+            <span id="prev">
+
+            </span>
+            <span id="next">
+
+            </span>
+
+            <div id="slider_img">
+
+                <a class="item">
+                    <img src="images/slider1.jpg">
+                </a>
+                <a class="item">
+                    <img src="images/slider2.jpg">
+                </a>
+                <a class="item">
+                    <img src="images/slider3.jpg">
+                </a>
+                <a class="item">
+                    <img src="images/slider4.jpg">
+                </a>
+                <a class="item">
+                    <img src="images/slider5.jpg">
+                </a>
+
+            </div>
+            <div id="slider_navigator">
+                <ul>
+                    <li>
+
+                        <a class="yekan fontsm">
+                            محصولات کالای خواب
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="yekan fontsm">
+                            لوازم جانبی دوربین
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="yekan fontsm">
+                            سری جدید vaio </a>
+                    </li>
+                    <li>
+
+                        <a class="yekan fontsm">
+                            کتب معنوی
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="yekan fontsm">
+                            لوازم خانگی boosh </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <style>
+            #sercices_festure {
+                width: 890px;
+                height: 76px;
+                background: #fff;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                border-radius: 4px;
+                margin: 7px 0;
+                overflow: hidden;
+            }
+
+            #sercices_festure ul {
+                padding: 0;
+                height: 100%;
+            }
+
+            #sercices_festure ul li {
+                width: 178px;
+                float: right;
+                height: 100%;
+            }
+
+            #sercices_festure ul li a {
+                display: block;
+                height: 100%;
+                font-size: 10pt;
+                line-height: 72px;
+                padding: 0 10px;
+
+            }
+
+            #sercices_festure ul li a i {
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                background: url(images/slices.png) no-repeat;
+                margin-top: 22px;
+                float: right;
+                margin-left: 12px;
+
+            }
+        </style>
+        <div id="sercices_festure">
+            <ul>
+                <li>
+                    <a class="yekan">
+                        <i style="background-position:-210px -473px;">
+
+                        </i>
+                        7 روز ضمانت بازگشت
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        <i style="background-position:-260px -473px;">
+
+                        </i>
+                        پرداخت در محل
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        <i style="background-position:-158px -473px;">
+
+                        </i>
+                        ضمانت اصل بودن کالا
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        <i style="background-position:-325px -473px;width: 35px">
+
+                        </i>
+                        تحویل اکسپرس
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        <i style="background-position:-104px -473px;">
+
+                        </i>
+                        تضمین بهترین قیمت
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <style>
+            #slider2 {
+                width: 890px;
+                height: 304px;
+                background: #fff;
+                border-radius: 4px;
+                overflow: hidden;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                margin-top: 8px;
+                position: relative;
+            }
+
+            #slider2_content {
+                width: 705px;
+                float: right;
+                height: 100%;
+            }
+
+            #slider2_content a {
+                display: block;
+                height: 100%;
+            }
+
+            #slider2_content a #slider2_content_left img {
+                width: 225px;
+                margin-right: 38px;
+            }
+
+            #slider2_navigator {
+                width: 184px;
+                border-right: 1px solid #ccc;
+                height: 100%;
+                float: left;
+                background: #eeeeee;
+            }
+
+            #slider2_navigator ul {
+                padding: 0;
+            }
+
+            #slider2_navigator ul li {
+                height: 38px;
+            }
+
+            #slider2_navigator ul li a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-family: yekan;
+                font-size: 10pt;
+                line-height: 37px;
+                cursor: pointer;
+
+            }
+
+            .slider2_content_right {
+                width: 400px;
+                height: 100%;
+                float: right;
+            }
+
+            .slider2_content_left {
+                width: 305px;
+                height: 100%;
+                float: left;
+            }
+
+            .slider2_content_right .title {
+                color: red;
+                font-family: yekan;
+                font-size: 14pt;
+                padding-right: 30px;
+                padding-top: 10px;
+
+            }
+
+            .slider2_content_right .price_info {
+
+                height: 35px;
+                margin-right: 30px;
+            }
+
+            .price_info_old {
+                width: 88px;
+                height: 100%;
+                background: #ccc;
+                float: right;
+                position: relative;
+                color: #fff;
+                font-size: 25px;
+                text-align: center;
+
+            }
+
+            .price_info_old::after {
+                content: " ";
+                position: absolute;
+                left: -11px;
+                top: 8px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 14px 10px 0;
+                border-color: transparent #cccccc transparent transparent;
+                z-index: 2;
+            }
+
+            .price_info_old::before {
+                content: " ";
+                position: absolute;
+                right: 0;
+                top: 16px;
+                width: 95%;
+                height: 0;
+                border-bottom: 2px solid #000;
+                transform: rotate(-24deg);
+
+            }
+
+            .price_info_new {
+                width: 200px;
+                height: 100%;
+                background: red;
+                float: right;
+                margin-right: 2px;
+                position: relative;
+                color: #fff;
+                font-size: 17pt;
+                text-align: center;
+
+            }
+
+            .price_info_new::before {
+                content: " ";
+                position: absolute;
+                right: 0;
+                top: 8px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 14px 10px 0;
+                border-color: transparent #ffffff transparent transparent;
+
+            }
+
+            .flipTimer, .flipTimer div {
+                direction: ltr !important;
+            }
+
+            .flipTimer {
+                transform: scale(.3);
+                position: absolute;
+                top: 207px;
+                right: -146px;
+            }
+
+            .slider2_finished img {
+                width: 900px;
+                height: 900px;
+                right: 0;
+                display: none;
+                line-height: 235px;
+                position: absolute;
+                margin: -200px -200px;
+                z-index: 2;
+
+            }
+
+            #slider2_navigator .active {
+                background: #ff3338;
+                color: #fff;
+                position: relative;
+            }
+
+            #slider2_navigator .active::after {
+                content: " ";
+                position: absolute;
+                right: -17px;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 19px 0 19px 17px;
+                border-color: transparent transparent transparent #ff3338;
+
+            }
+
+
+        </style>
+        <div id="slider2">
+            <div class="flipTimer">
+
+                <div class="hours"></div>
+                <div class="minutes"></div>
+                <div class="seconds"></div>
+            </div>
+            <div class="slider2_finished">
+                <img src="images/Tamam%20shod.png">
+            </div>
+
+
+            <div id="slider2_content">
+                <a class="item">
+                    <div class="slider2_content_right">
+
+                        <p class="title">
+                            جشنواره ماه نو
+                        </p>
+                        <div class="price_info">
+
+                            <div class="price_info_old yekan">
+                                1.830
+                            </div>
+
+
+                            <div class="price_info_new yekan">
+                                1.779 هزارتومان
+                            </div>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt
+                       ;margin-top: 15px;margin-bottom: 1px">
+                                پردازنده:Intel core3 6006U </p>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                رم: 4gb DDR4- هارد:1Tb </p>
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                نمایشگر FullHd مات </p>
+
+
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin:12px 0;"> فرصت باقیمانه تا
+                                این پیشنهاد:
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="slider2_content_left">
+                        <p class="yekan" style="font-size: 15pt;margin-left: 87px;">
+                            لپ تاپ 15 اینج ایسر مدل aspire-e5-575-34b
+                        </p>
+                        <img src="images/acer-aspire-e5-575-34b9-15-inch-laptop-6df256.jpg">
+
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="slider2_content_right">
+
+                        <p class="title">
+                            جشنواره ماه نو
+                        </p>
+                        <div class="price_info">
+
+                            <div class="price_info_old yekan">
+                                179
+                            </div>
+
+
+                            <div class="price_info_new yekan">
+                                99 هزارتومان
+                            </div>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt
+                       ;margin-top: 15px;margin-bottom: 1px">
+                                صفحه کلید راحت برای تایپ سریع و راحت </p>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                پشتیبانی از دو سیم کارت </p>
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                پشتیبانی از کارت حافظه جانبی </p>
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin:12px 0;"> فرصت باقیمانه تا
+                                این پیشنهاد:
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="slider2_content_left">
+                        <p class="yekan" style="font-size: 15pt;text-align: center;margin-left: 55px">
+                            گوشی موبایل ارد 3310 دوسیم کارت </p>
+                        <img src="images/orod-3310-dual-sim-mobile-phone-2b3537.jpg">
+
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="slider2_content_right">
+
+                        <p class="title">
+                            جشنواره ماه نو
+                        </p>
+                        <div class="price_info">
+
+                            <div class="price_info_old yekan">
+                                125
+                            </div>
+
+
+                            <div class="price_info_new yekan">
+                                69 هزارتومان
+                            </div>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt
+                       ;margin-top: 15px;margin-bottom: 1px">
+                                ست 6 عددی لیوان پایه دار با نوار طلایی </p>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                جنس:شیشه </p>
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin: 35px 0"> فرصت باقیمانه تا
+                                این پیشنهاد:
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="slider2_content_left">
+                        <p class="yekan" style="font-size: 15pt;text-align: center;margin-left: 70px">
+                            لیوان مدل HJ8016 بسته 6 عددی </p>
+                        <img src="images/hj8016-glass-pack-of-6-d772e0.jpg">
+
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="slider2_content_right">
+
+                        <p class="title">
+                            جشنواره ماه نو
+                        </p>
+                        <div class="price_info">
+
+                            <div class="price_info_old yekan">
+                                670
+                            </div>
+
+
+                            <div class="price_info_new yekan">
+                                592 هزارتومان
+                            </div>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt
+                       ;margin-top: 15px;margin-bottom: 1px">
+                                باتری داخلی با طول عمر 8 ساعت </p>
+                            <p class="yekan " style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                قابلیت اتصال به Spotify </p>
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin: 2px;font-size: 10pt">
+                                اتصال دهنده بلوتوث ,اتصال بیسیم (wi-fi)</p>
+
+
+                            <p class="yekan fontsm" style="float: right;width: 100%;margin:12px 0;"> فرصت باقیمانه تا
+                                این پیشنهاد:
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="slider2_content_left">
+                        <p class="yekan" style="font-size: 15pt;margin-left: 87px;">
+                            اسپیکر بلوتوثی قابل حمل آدر
+                        </p>
+                        <img src="images/aether-cone-portable-bluetooth-speaker-92f5a9.jpg">
+
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div id="slider2_navigator">
+                <ul>
+                    <li>
+                        <a>
+                            لپ تاپ
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            گوشی موبایل
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            لیوان
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            اسپیکر بلوتوثی قابل حمل
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            موزن گوشی,بینی و ابرو
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Car Speacer
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            تبلت مایکروسافت
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            مانیتور بنکیو
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <style>
+            .sliderscroll {
+                width: 890px;
+                height: 310px;
+                padding: 0;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                overflow: hidden;
+                background: #fff;
+                margin-top: 10px;
+                border-radius: 4px;
+
+            }
+
+            .sliderscroll h3 {
+                background: #f7f9fa;
+                height: 35px;
+                width: 890px;
+                padding-right: 10px;
+                padding-top: 7px;
+                font-family: yekan;
+                font-size: 13px;
+                margin: 0;
+                font-weight: normal;
+
+            }
+
+            .sliderscroll_content {
+                height: 268px;
+
+            }
+
+            .sliderscroll_prev, .sliderscroll_next {
+                width: 55px;
+                height: 100%;
+                float: right;
+
+            }
+
+            .sliderscroll_next {
+                box-shadow: 1px 4pt 3pt #000;
+            }
+
+            .sliderscroll_main {
+                width: 780px;
+                height: 100%;
+                float: right;
+                overflow: hidden;
+            }
+
+            .sliderscroll_prev .prev {
+                width: 15px;
+                height: 42px;
+                background: url(images/slices.png) no-repeat;
+                background-position: -852px -677px;
+                display: block;
+                position: relative;
+                top: 100px;
+                right: 18px;
+                cursor: pointer;
+
+            }
+
+            .sliderscroll_next .next {
+                width: 15px;
+                height: 42px;
+                background: url(images/slices.png) no-repeat;
+                background-position: -813px -677px;
+                display: block;
+                position: relative;
+                top: 100px;
+                right: 18px;
+                cursor: pointer;
+
+            }
+
+            .sliderscroll .sliderscroll_main ul {
+                padding: 0;
+                height: 100%;
+
+            }
+
+            .sliderscroll .sliderscroll_main ul li {
+                width: 190px;
+                height: 100%;
+                float: right;
+                padding: 0;
+
+            }
+
+            .sliderscroll .sliderscroll_main ul li a {
+
+                height: 100%;
+                display: block;
+                text-align: center;
+
+            }
+
+            .sliderscroll .price {
+                color: green;
+                font-size: 13pt;
+            }
+
+            .sliderscroll p {
+                text-align: center;
+                margin-top: 3px;
+                margin-bottom: 5px;
+            }
+
+        </style>
+
+
+        <div class="sliderscroll">
+
+            <h3>
+                فقط در دیجی کالا
+            </h3>
+
+
+            <div class="sliderscroll_content">
+                <div class="sliderscroll_prev">
+                    <span class="prev" onclick="sliderscroll('right',this);">
+
+                    </span>
+                </div>
+                <div class="sliderscroll_main">
+
+                    <ul>
+                        <li>
+                            <a>
+                                <img src="images/ASUS-V401UQ-C-14-inch-Laptop-d298c0.JPG">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">ASUS-V401UQ-C-14-inch
+                                </p>
+                                <p class="yekan price">
+                                    1,500,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/MSI-PE60-7RD-C-15-inch-Laptop-965f00.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    MSI-PE60-7RD-C-15-inch
+                                </p>
+                                <p class="yekan price">
+                                    2,800,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/i-Life-Zed-Air-Mini---10-inch-laptop-6cc317.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    i-Life-Zed-Air-inch
+                                </p>
+                                <p class="yekan price">
+                                    3,870,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Computer-Headphone-Bang-and-Olufsen-Boeplay-H8.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    Headphone-Bang-and
+                                </p>
+                                <p class="yekan price">
+                                    1,199.000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/mobile.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    موبایل Appel
+                                </p>
+                                <p class="yekan price">
+                                    4,500,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Apple-iPhone-X.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Apple-iPhone-X-256GB
+                                </p>
+                                <p class="yekan price">
+                                    3,600,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Xiaomi-Mi-4i-Dual-SIM-Mobile-Phone---16GB.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Xiaomi-Mi-4i-Dual-SIM
+                                </p>
+                                <p class="yekan price">
+                                    2,100,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Samsung-Galaxy-J7-Pro-SM-J730F-Dual-SIM-Mobile-Phone-f7bc02.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Samsung-Galaxy-S8-Plus-SM-G955FD
+                                </p>
+                                <p class="yekan price">
+                                    2,350,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+                <div class="sliderscroll_next">
+                    <span class="next" onclick="sliderscroll('left',this)"></span>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <style>
+            .direct-access {
+                width: 290px;
+                height: 190px;
+                margin-left: 10px;
+                padding: 0;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.19);
+                overflow: hidden;
+                background: #fff;
+                margin-top: 10px;
+                border-radius: 4px;
+                float: right;
+                display: block;
+
+            }
+
+
+        </style>
+
+
+        <a class="direct-access">
+            <img src="images/direct-access1.jpg">
+
+        </a>
+        <a class="direct-access" style="width: 590px;margin-left: 0">
+            <img src="images/direct-access2.jpg">
+
+        </a>
+        <a class="direct-access">
+            <img src="images/direct-access3.jpg">
+
+        </a>
+        <a class="direct-access">
+            <img src="images/direct-access4.jpg">
+
+        </a>
+        <a class="direct-access" style="margin-left: 0">
+            <img src="images/direct-access5.jpg">
+
+        </a>
+        <a class="direct-access" style="width: 590px;">
+            <img src="images/direct-access6.jpg">
+
+        </a>
+        <a class="direct-access" style="margin-left: 0">
+            <img src="images/direct-access7.jpg">
+
+        </a>
+
+
+        <div class="sliderscroll" style="margin-top: 10px;float: right;">
+
+            <h3>
+                پربازدیدترین ها </h3>
+
+
+            <div class="sliderscroll_content">
+                <div class="sliderscroll_prev">
+                    <span class="prev" onclick="sliderscroll('right',this);">
+
+                    </span>
+                </div>
+                <div class="sliderscroll_main">
+
+                    <ul>
+                        <li>
+                            <a>
+                                <img src="images/ASUS-V401UQ-C-14-inch-Laptop-d298c0.JPG">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">ASUS-V401UQ-C-14-inch
+                                </p>
+                                <p class="yekan price">
+                                    1,500,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/MSI-PE60-7RD-C-15-inch-Laptop-965f00.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    MSI-PE60-7RD-C-15-inch
+                                </p>
+                                <p class="yekan price">
+                                    2,800,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/i-Life-Zed-Air-Mini---10-inch-laptop-6cc317.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    i-Life-Zed-Air-inch
+                                </p>
+                                <p class="yekan price">
+                                    3,870,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Computer-Headphone-Bang-and-Olufsen-Boeplay-H8.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    Headphone-Bang-and
+                                </p>
+                                <p class="yekan price">
+                                    1,199.000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/mobile.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    موبایل Appel
+                                </p>
+                                <p class="yekan price">
+                                    4,500,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Apple-iPhone-X.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Apple-iPhone-X-256GB
+                                </p>
+                                <p class="yekan price">
+                                    3,600,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Xiaomi-Mi-4i-Dual-SIM-Mobile-Phone---16GB.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Xiaomi-Mi-4i-Dual-SIM
+                                </p>
+                                <p class="yekan price">
+                                    2,100,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/Samsung-Galaxy-J7-Pro-SM-J730F-Dual-SIM-Mobile-Phone-f7bc02.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">Samsung-Galaxy-S8-Plus-SM-G955FD
+                                </p>
+                                <p class="yekan price">
+                                    2,350,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+                <div class="sliderscroll_next">
+                    <span class="next" onclick="sliderscroll('left',this)"></span>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="sliderscroll" style="margin-top: 10px;float: right;">
+
+            <h3>
+                جدیدترین ها </h3>
+
+
+            <div class="sliderscroll_content">
+                <div class="sliderscroll_prev">
+                    <span class="prev" onclick="sliderscroll('right',this);">
+
+                    </span>
+                </div>
+                <div class="sliderscroll_main">
+
+                    <ul>
+                        <li>
+                            <a>
+                                <img src="images/slider3-0.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">گرندنبند نقره مدل sj-n061
+                                </p>
+                                <p class="yekan price">
+                                    109,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-1.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    گرندنبند نقره مدل sj-n062
+                                </p>
+                                <p class="yekan price">
+                                    105,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-2.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    گرندنبند نقره مدل sj-n062
+                                </p>
+                                <p class="yekan price">
+                                    110,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-4.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    گرندنبند نقره مدل sj-n063
+                                </p>
+                                <p class="yekan price">
+                                    102,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-5.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">
+                                    گرندنبند نقره مدل sj-n059 </p>
+                                <p class="yekan price">
+                                    99,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-6.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">گرندنبند نقره مدل sj-n065
+                                </p>
+                                <p class="yekan price">
+                                    120,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-7.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">گرندنبند نقره مدل sj-n049
+                                </p>
+                                <p class="yekan price">
+                                    130,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="images/slider3-8.jpg">
+                                <img src="images/exclusive-blue.png">
+
+                                <p class="yekan fontsm">گرندنبند نقره مدل sj-n030
+                                </p>
+                                <p class="yekan price">
+                                    89,000 تومان
+                                </p>
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+                <div class="sliderscroll_next">
+                    <span class="next" onclick="sliderscroll('left',this)"></span>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+    .footer {
+
+        height: 310px;
+        display: inline-block;
+        margin-top: 60px;
+    }
+
+    .footer_top {
+        width: 100%;
+        height: 45px;
+        background: #6d717a;
+        float: right;
+
+    }
+
+    .footer_bottom {
+        width: 100%;
+        height: 245px;
+        float: right;
+        background: #f7f8fa;
+    }
+
+    .main {
+        width: 1200px;
+        height: 100%;
+        margin: auto;
+    }
+
+    .main p {
+        color: #fff;
+        float: right;
+        margin-top: 8px;
+        margin-right: 7px;
+    }
+
+    .footer_top ul {
+        display: block;
+        padding: 0;
+        height: 100%;
+        float: left;
+        color: #fff;
+    }
+
+    .footer_top ul li {
+        height: 100%;
+        float: right;
+        margin-right: 34px;
+        cursor: pointer;
+    }
+
+    .footer_top ul li a {
+        color: #fff;
+        margin-top: 10px;
+        display: block;
+        font-size: 11.5pt;
+    }
+
+    .footer_top i {
+        width: 18px;
+        height: 18px;
+        display: block;
+        background: url(images/slices.png);
+        float: left;
+        margin-right: 11px;
+        margin-top: 5px;
+    }
+
+    .footer_top .main ul li :hover {
+        border-bottom: 1px solid #ffff;
+
+    }
+
+    .footer_bottom {
+        width: 100%;
+        background: #f7f8fa;
+        float: right;
+        padding: 34px 0;
+    }
+
+    .footer_bottom .right {
+        width: 323px;
+        height: 100%;
+        float: right;
+        margin-right: 7px;
+
+    }
+
+    .footer_bottom .center {
+        width: 330px;
+        height: 100%;
+        float: right;
+    }
+
+    .footer_bottom .left {
+        width: 540px;
+        height: 100%;
+        float: left;
+    }
+
+    .footer_bottom ul {
+        padding: 0;
+    }
+
+    .footer_bottom ul li {
+        font-size: 12.5pt;
+        font-family: yekan;
+        color: #777;
+        margin-bottom: 19px;
+        cursor: pointer;
+    }
+
+    .footer_bottom ul li :hover {
+        color: #000;
+    }
+
+    .footer_bottom .titel {
+        font-size: 16pt;
+        color: #4e4e4e;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .footer_bottom .left p {
+        color: #4e4e4e;
+        font-size: 16pt;
+        font-family: yekan;
+        margin-top: 0;
+    }
+
+    .footer_bottom .email input {
+        width: 400px;
+        height: 36px;
+        font-family: yekan;
+        border: 1px solid #c9d1d7;
+        border-radius: 2px;
+        padding: 0 10px;
+        margin: 0;
+        font-size: 12.5pt;
+        color: #999
+    }
+
+    .footer_bottom .email input:-ms-keyboard-active {
+        text-align: left;
+    }
+
+    .footer_bottom .email .btn {
+        width: 88px;
+        height: 37px;
+        font-family: yekan;
+        box-shadow: 0 3px 2pt #c9d1d7;
+        border-radius: 4px;
+        padding: 0 10px;
+        margin: 0 5px;
+        background: #208de6;
+        color: white;
+        font-size: 12.5pt;
+        float: left;
+        text-align: center;
+        line-height: 33px;
+        cursor: pointer;
+    }
+
+    .footer .social {
+        width: 100%;
+        height: 48px;
+        display: block;
+        margin-top: 73px;
+    }
+
+    .social .social_left {
+        width: 225px;
+        height: 100%;
+        float: right;
+
+    }
+
+    .social .social_right {
+        width: 315px;
+        height: 100%;
+        float: left;
+
+    }
+
+    .social .social_left > ul {
+        width: 100%;
+        height: 100%;
+        float: right;
+    }
+
+    .social .social_left > ul > li {
+        width: 32px;
+        height: 32px;
+        float: right;
+        margin-left: 4px;
+        margin-bottom: 0;
+        margin-top: 8px;
+    }
+
+    .social .social_left > ul > li > a {
+        width: 100%;
+        height: 100%;
+        float: right;
+        background: url(images/slices.png);
+    }
+
+    .social_right a {
+        display: block;
+        width: 150px;
+        height: 48px;
+        float: right;
+        padding-right: 5px;
+        cursor: pointer;
+
+    }
+
+
+</style>
+
+<div class="footer">
+
+    <div class="footer_top">
+        <div class="main">
+
+            <p class="yekan fontlg">
+                ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم.
+            </p>
+            <ul>
+                <li>
+                    <a class="yekan">
+                        021-12548754 | 021-65847584
+                        <i style="background-position: -399px -424px"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan ">
+                        سوالات متداول
+                        <i style="background-position: -358px -424px"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        Ahmadfaili89@gmail.com
+                        <i style="background-position: -320px -424px"></i>
+
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer_bottom">
+        <div class="main">
+            <div class="right">
+
+                <ul>
+                    <li>
+                        <a class="titel">
+                            راهنمای خرید از دی جی کالا
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            ثبت سفارش </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            رویه های ارسال سفارش </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            شیوه های پرداخت </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            معرفی دیجی بن </a>
+                    </li>
+                    <li>
+
+                </ul>
+
+            </div>
+            <div class="center">
+                <ul>
+                    <li>
+                        <a class="titel">
+                            خدمات مشتریان </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            پاسخ به پرسش های متداول</a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            رویه های باز گرداندن کالا </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            شرایط استفاده </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            حریم خصوصی </a>
+                    </li>
+                    <li>
+
+                </ul>
+            </div>
+            <div class="left">
+                <p>
+                    از تخفیف‌ها و جدیدترین‌های دیجی کالا باخبر شوید!
+                </p>
+                <div class="email">
+                    <input type="text" placeholder="آدرس ایمیل خود را وارد کنید ...">
+                    <span class="btn"> تایید ایمیل</span>
+                </div>
+                <div class="social">
+                    <div class="social_left">
+                        <ul>
+                            <li>
+                                <a style="background-position: -575px -618px;">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a style="background-position: -451px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -534px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -491px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -615px -618px;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social_right">
+                        <a>
+                            <img src="images/google.jpg">
+                        </a>
+                        <a>
+                            <img src="images/ios.jpg">
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script>
+
+    var slidertag = $('#slider');
+    var slideritems = slidertag.find('.item');
+    var numItem = slideritems.length;
+    var nextslid = 1;
+    var timeOut = 5000;
+    var slidersNavigators = slidertag.find("#slider_navigator ul li");
+
+    function slider() {
+
+        if (nextslid > numItem) {
+            nextslid = 1;
+        }
+        if (nextslid < 1) {
+            nextslid = numItem;
+        }
+
+        slideritems.hide();
+        slideritems.eq(nextslid - 1).fadeIn(100);
+        slidersNavigators.removeClass('active');
+        slidersNavigators.eq(nextslid - 1).addClass('active');
+        nextslid++;
+
+    }
+
+    slider();
+    var sliderInterval = setInterval(slider, timeOut);
+
+    slidertag.mouseleave(function () {
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(slider, timeOut);
+
+    });
+
+    function GoTonext() {
+        nextslid = nextslid - 2;
+        slider();
+
+    }
+
+    function goToslider(index) {
+        nextslid = index;
+        slider()
+    }
+
+    $('#slider #slider_navigator li').hover(function () {
+        clearInterval(sliderInterval);
+        var index = $(this).index();
+        goToslider(index + 1);
+    }, function () {
+
+
+    });
+    $('#slider #next').click(function () {
+        clearInterval(sliderInterval);
+        GoTonext();
+
+    });
+
+    function GoToprev() {
+        slider();
+
+    }
+
+    $('#slider #prev').click(function () {
+        clearInterval(sliderInterval);
+        GoToprev();
+
+    });
+
+
+    $('button').click(function () {
+        slider();
+
+    });
+    //main slider
+
+    var slidertag2 = $('#slider2');
+    var slideritems2 = slidertag2.find('.item');
+    var numItem2 = slideritems2.length;
+    var nextslid2 = 1;
+    var timeOut2 = 5000;
+    var slidersNavigators2 = slidertag2.find("#slider2_navigator ul li");
+
+    function slider2() {
+
+        if (nextslid2 > numItem2) {
+            nextslid2 = 1;
+        }
+        if (nextslid2 < 1) {
+            nextslid2 = numItem2;
+        }
+
+        slideritems2.hide();
+        slideritems2.eq(nextslid2 - 1).fadeIn(100);
+        slidersNavigators2.removeClass('active');
+        slidersNavigators2.eq(nextslid2 - 1).addClass('active');
+        nextslid2++;
+
+    }
+
+    slider2();
+    var sliderInterval2 = setInterval(slider2, timeOut2);
+
+    slidertag2.mouseleave(function () {
+        clearInterval(sliderInterval2);
+        sliderInterval2 = setInterval(slider2, timeOut2);
+
+    });
+
+    function GoTonext2() {
+        nextslid2 = nextslid2 - 2;
+        slider2();
+
+    }
+
+    function goToslider2(index) {
+        nextslid2 = index;
+        slider2()
+    }
+
+    $('#slider2 #slider2_navigator li').click(function () {
+        clearInterval(sliderInterval2);
+        var index = $(this).index();
+        goToslider2(index + 1);
+    });
+
+
+    //slider2
+
+    var timer = {};
+
+    $('#menu_top li').hover(function () {
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeIn(0);
+            tag.addClass('active-menu');
+            $('> .submenu3', tag).fadeIn(0);
+
+        }, 500);
+
+
+    }, function () {
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeOut(0);
+            tag.removeClass('active-menu');
+            $('> .submenu3', tag).fadeOut(0);
+
+        }, 600);
+    });
+
+
+//    $('.flipTimer').flipTimer({
+//        direction: 'down',
+//        date: 'june ,18,2018 22:00:00',
+//        filter: function () {
+//
+//            $(".slider2_content_right").blur(100);
+//
+//
+//            $('.slider2_content_left').css('opacity', .4);
+//            $('.slider2_finished img').fadeIn(200);
+//        }
+//
+//    });
+        $('.flipTimer').flipTimer({
+            direction: 'down',
+            date: 'june 19,2018 24:00:00',
+            callback: function () {
+                $('.slider2_content_right').blur(10);
+                $('.slider2_content_left').css('opacity' ,.4);
+                $('.slider2_finished img').fadeIn(200);
+            }
+
+        });
+
+    var sliderscrollTag = $(".sliderscroll");
+    var sliderscrollul = sliderscrollTag.find('.sliderscroll_main ul');
+    var sliderscrollItemes = sliderscrollul.find('li');
+    var sliderscrollItemesNumbers = sliderscrollItemes.length;
+    var sliderscrollNumberes = Math.ceil(sliderscrollItemesNumbers / 4);
+    var MaxNegativNambers = -(sliderscrollNumberes - 1) * 780;
+
+    sliderscrollul.css('width', sliderscrollItemesNumbers * 190);
+
+
+    function sliderscroll(direction, tag) {
+        var span_tag = $(tag);
+
+        var sliderscrollTag = span_tag.parents('.sliderscroll');
+        var sliderscrollul = sliderscrollTag.find('.sliderscroll_main ul');
+        var sliderscrollItemes = sliderscrollul.find('li');
+        var sliderscrollItemesNumbers = sliderscrollItemes.length;
+        var sliderscrollNumberes = Math.ceil(sliderscrollItemesNumbers / 4);
+        var MaxNegativNambers = -(sliderscrollNumberes - 1) * 780;
+
+        sliderscrollul.css('width', sliderscrollItemesNumbers * 190);
+
+
+        var marginrightnew;
+        var marginRightold = sliderscrollul.css('margin-right');
+        marginRightold = parseFloat(marginRightold);
+
+        if (direction == 'left') {
+            marginrightnew = marginRightold - 780;
+
+        }
+        if (direction == 'right') {
+            marginrightnew = marginRightold + 780;
+        }
+
+        if (marginrightnew < MaxNegativNambers) {
+            marginrightnew = 0;
+        }
+        if (marginrightnew > 0) {
+            marginrightnew = MaxNegativNambers;
+        }
+
+
+        sliderscrollul.animate({'marginRight': marginrightnew}, 1000);
+
+
+    }
+
+
+    //    slider_right
+    var slidertag3 = $('#slider_right');
+    var slideritems3 = slidertag3.find('.item');
+    var numItem3 = slideritems3.length;
+    var nextslid3 = 1;
+    var timeOut3 = 10000;
+
+
+    function slider_right() {
+
+        if (nextslid3 > numItem3) {
+            nextslid3 = 1;
+        }
+        if (nextslid3 < 1) {
+            nextslid3 = numItem3;
+        }
+
+        slideritems3.hide();
+        slideritems3.eq(nextslid3 - 1).fadeIn(0);
+        nextslid3++;
+
+
+    }
+
+    var test = $('.myBar');
+
+    function tag() {
+
+        test.animate({'width': 250}, 10000, function () {
+            test.css('width', 0);
+
+        })
+
+    }
+
+    slider_right();
+    tag();
+    var sliderInterval3 = setInterval(slider_right, timeOut3);
+    var sliderInterval30 = setInterval(tag, timeOut3);
+
+
+    function goToslider3(index) {
+        nextslid3 = index;
+        slider_right();
+    }
+
+
+    //    function move() {
+    //        var elem = document.getElementById ("myBar");
+    //        var width = 0;
+    //        var timeOut = setInterval(frame, 40);
+    //        function frame() {
+    //            if (width >= 250) {
+    //                width=0;
+    //            } else {
+    //                width++;
+    //                elem.style.width = width + 'px';
+    //            }
+    //        }
+    //    }
+    //    move();
+
+
+</script>
+
+
+</body>
+
+
+</html>

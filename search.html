@@ -1,0 +1,4055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>فروشگاه اینترنتی دی جی کالا </title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.flipTimer.js"></script>
+    <link href="css/flipTimer.css" rel="stylesheet">
+</head>
+<body style="margin: 0;background: #eeeeee">
+
+
+<style>
+
+
+    @font-face {
+        font-family: 'yekan';
+        src: url('fonts/yekan.ttf') format('truetype'),
+        url(fonts/yekan.eot?#iefix) format("embedded-opentype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    div, ul, li, span, p, a {
+        text-align: right;
+        direction: rtl;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .yekan {
+        font-family: yekan;
+    }
+
+    .fontsm {
+        font-size: 12.3pt;
+    }
+
+    .fontmd {
+        font-size: 13.3pt;
+    }
+
+    .fontlg {
+        font-size: 14.3pt;
+    }
+
+</style>
+
+
+<header style="background: #fff;min-width: 1200px">
+
+
+    <div id="header" style="width: 1200px;height:100px;margin: 0 auto;padding-top:10px;display: block;">
+        <div id="header_right" style="width: 720px;float: right;height: 100px;margin: 0 7px">
+            <div id="header_right_top" style="height: 40px;">
+                <span style="width: 20px;height: 20px;background: url(images/lock.png);display: block;float: right">
+
+                </span>
+
+                <a class="yekan fontsm" href="/login " style="float: right;margin-right: 10px;">
+                    فروشگاه اینترنتی دیجی کالا,وارد شوید
+                </a>
+                <span style="width: 20px;height: 20px;background: url(images/singup.png);display: block;float: right;margin-right: 20px">
+
+                </span>
+                <a class="yekan fontsm" href="register" style="float: right;margin-right: 10px ">
+                    ثبت نام کنید
+                </a>
+            </div>
+            <div id="header_right_bottom" style="height: 50px;">
+                <div id="basket_top" style="width: 190px;height: 40px;float: right;">
+                    <div id="basket_top_right" style="width: 54px;height: 100%;background:#15bb23
+                    url(images/basket.png)no-repeat center;float: right">
+                    </div>
+
+                    <div id="basket_top_left" style="width: 96px;height: 100%;background: #12a520;float: right;
+                    padding: 0 20px;line-height: 36px;">
+                        <span class="yekan fontsm" style="color: #fff">سبد خرید</span>
+                        <span class="fontsm" style="width: 25px;height: 25px;background: #5fbf63;color: #fff;text-align: center;display: block;
+                      float: left;margin-top: 7px;border-radius: 100%;line-height: 25px;">0</span>
+                    </div>
+                </div>
+
+                <div id="search_top"
+                     style="width: 480px;height: 40px;float: right;margin-right: 20px;position: relative">
+                    <input class="yekan fontsm" style="width: 480px;height: 32px;margin-top: 2px;border: 1px solid #eee;border-radius: 2px;
+                    padding-right: 10px;color: #675e61;" placeholder="محصول دسته یا برند مورد نظر را جستجو کنید..."/>
+                    <span style="width: 42px;height: 35px;background: url(images/search.png)no-repeat center #9da3b1;display: block;position: absolute;left: -12px;
+                    top: 2px;border-radius: 2px;"></span>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="header_left" style="float: left">
+            <img src="images/logo.png">
+        </div>
+    </div>
+</header>
+<style>
+
+    nav {
+        box-shadow: 1px 3px 4px #eee;
+        -webkit-box-shadow: 1px 3px 4px #eee;
+        -moz-box-shadow: 1px 3px 4px #eee;
+
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    li {
+        list-style: none
+    }
+
+    #menu_top > ul {
+        position: relative;
+        padding: 0;
+        z-index: 7;
+
+    }
+
+    #menu_top > ul > li {
+        float: right;
+        height: 40px;
+    }
+
+    #menu_top > ul > li > a {
+        padding: 0 10px;
+        height: 40px;
+        display: block;
+        line-height: 36px;
+        font-size: 12pt;
+    }
+
+    .menu_down_icon {
+        width: 9px;
+        height: 8px;
+        background: url(images/slices.png);
+        display: inline-block;
+        margin-right: 7px;
+        margin-bottom: -1px;
+    }
+
+    #menu_top > ul > li > ul {
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        width: 1200px;
+        padding: 0;
+        box-shadow: 0 2px 3px #aaa;
+        display: none;
+
+    }
+
+    #menu_top > ul > li > ul > li {
+        float: right;
+
+    }
+
+    #menu_top > ul > li > ul > li > a {
+        padding: 5px 20px;
+        display: block;
+
+    }
+
+    #menu_top > ul > li > ul > li > a:hover {
+        border-bottom: 2px solid red;
+        background: url(images/arrow-3.png) no-repeat bottom center;
+
+    }
+
+    .top_menu3_col {
+        width: 299px;
+        height: 100%;
+        float: right;
+        border-left: 1px solid #eee;
+    }
+
+    .top_menu3_col_ul li {
+        padding-right: 15px;
+    }
+
+    .top_menu3_col_ul li:first-child {
+        padding-right: 5px;
+        color: #3571c5;
+    }
+
+    .submenu3 {
+        display: none;
+        z-index: 2;
+    }
+
+    .active-menu {
+        background: #fff;
+        box-shadow: 0 -1px 5px #eee;
+    }
+
+    .active-menu > a {
+        color: red;
+
+    }
+
+    #menu_top {
+        cursor: pointer;
+    }
+
+
+</style>
+
+
+<nav style="min-width: 1200px;height: 40px;background: #f7f8fa;border-top: 1px solid #e4f3f2;box-shadow: 0 2px 3px #aaa;z-index: 3;">
+    <div id="menu_top" style="width: 1200px;height: 40px;margin: auto;">
+        <ul>
+            <li data-time="1">
+                <a class="yekan">
+                    کالای دیجیتال
+                    <span class="menu_down_icon" style="background-position: -35px -729px;"></span>
+                </a>
+                <ul>
+
+                    <li data-time="3">
+                        <a class="yekan">
+                            موبایل
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">گوشی موبایل</li>
+                                    <li class="yekan fontsm">Appel</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/mobile.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+
+                    </li>
+                    <li data-time="4">
+                        <a class="yekan">
+                            تبلت و کتابخوان
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">تبلت</li>
+                                    <li class="yekan fontsm">Appel</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/tablet-ebook-reader.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+                    </li>
+                    <li data-time="5">
+                        <a class="yekan">
+                            لب تاپ
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-time="2">
+                <a class="yekan">
+
+
+                    لوازم خانگی
+                    <span class="menu_down_icon" style="background-position: -35px -729px;"></span>
+                </a>
+                <ul>
+                    <li data-time="6">
+                        <a class="yekan fontsm">
+                            صوتی و تصویری
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">تلویزیون بر اساس سازنده</li>
+                                    <li class="yekan fontsm">LG</li>
+                                    <li class="yekan fontsm">Samsung</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/video-audio-entertainment.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+
+                    </li>
+                    <li data-time="7">
+                        <a class="yekan fontsm">
+                            لوازم خانگی برقی
+                        </a>
+                        <div class="submenu3" style="width: 1200px;height: 300px; background: #fff;border-top: 1px solid #eee;
+                            position: absolute;
+                            right: 0;">
+                            <div class="top_menu3_col">
+                                <ul style="padding-right: 10px;" class="top_menu3_col_ul">
+                                    <li class="yekan fontsm">لوازم پخت پز</li>
+                                    <li class="yekan fontsm">مایکروویو</li>
+                                    <li class="yekan fontsm">اجاق گاز</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <div class="top_menu3_col"></div>
+                            <img src="images/home-appliance.png" width="379" height="335"
+                                 style="position: absolute;left: 2px;bottom: 2px;">
+                        </div>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+        <div class="promotion-badge yekan">
+            <a>پیشنهادهای شگفت انگیز</a>
+            <span></span>
+        </div>
+    </div>
+</nav>
+<style>
+    .promotion-badge {
+        width: 180px;
+        height: 40px;
+        background: #ebeff2;
+        color: #656a6e;
+        text-align: center;
+        font-size: 12pt;
+        float: left;
+        display: block;
+        line-height: 39px;
+        position: relative
+
+    }
+
+    .promotion-badge span {
+        width: 17px;
+        height: 17px;
+        background: url(images/slices.png) no-repeat -1219px -388px;
+        display: block;
+        float: right;
+        margin-right: 8px;
+        margin-top: 12px;
+    }
+
+    .promotion-badge a:hover {
+        transition: all .3s ease 0s;
+        color: #000;
+
+    }
+
+    #main {
+        padding-top: 20px;
+        width: 100% !important;
+        background: transparent !important;
+        float: right;
+        position: relative;
+    }
+
+    .filter {
+        width: 250px;
+        margin: 0;
+        padding: 0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+        background: #fff;
+        border: 1px solid #ebeced;
+        border-radius: 2px;
+        overflow: hidden;
+        float: right;
+    }
+
+    .filter_input {
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid #e3e3e3;
+
+    }
+
+    .filter_input_top {
+        padding: 18px 15px 7px;
+
+    }
+
+    .check {
+        padding: 0;
+        overflow: hidden;
+        display: none;
+    }
+
+    .filter_item_text {
+        color: #5c5c5c;
+        position: relative;
+        padding-right: 25px;
+        float: right;
+        top: 0;
+        line-height: 18px;
+
+    }
+
+    .filter_item_text_arow {
+        background: url(images/slices.png) no-repeat -381px -190px;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .filter_main {
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+
+    }
+
+    .filter_main_header {
+        height: 55px;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        font-family: yekan;
+        font-size: 11pt;
+        padding: 0 13px;
+        color: #333;
+
+    }
+
+    .filter_main_header span {
+        top: 18px;
+        position: absolute;
+    }
+
+    .filter_main_header .filter_main_header_arrow {
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute !important;
+        float: left;
+        background: url(images/slices.png) no-repeat -35px -705px;
+        top: 28px;
+        left: 11px;
+        transition: transform 500ms;
+
+    }
+
+    .filter_main_item_dg {
+        position: relative;
+        font-size: 11pt;
+        font-family: yekan;
+        color: #000;
+        cursor: pointer;
+    }
+
+    .filter_main_item {
+        padding-top: 15px;
+    }
+
+    .filter_main_item_dg ::before {
+        content: "";
+        position: absolute;
+        border-top: 5px solid #818285;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        right: -23px;
+        top: 11px;
+    }
+
+    .filter_main_item1 {
+        margin-right: 15px;
+        margin-top: 11px;
+
+    }
+
+    .filter_main_item2 {
+        margin-right: 25px;
+        margin-top: 11px;
+        margin-bottom: 10px;
+
+    }
+
+    .catalog {
+        font-family: yekan;
+        font-size: 11pt;
+        color: #5c5c5c;
+        line-height: 32px;
+        cursor: pointer;
+
+    }
+
+    .filter_main_item2 .catalog:hover {
+        color: #2196f3 !important;
+    }
+
+    .filter_item .filter_main_item_brand {
+        width: 205px;
+        font-family: yekan;
+        font-size: 11pt;
+        display: block;
+        padding: 7px;
+        color: #aaa;
+        margin-bottom: 20px;
+        height: 27px;
+        border: 1px solid #d7d7d7;
+        border-radius: 2px;
+    }
+
+    .filter_item .filter_item_text {
+        font-size: 11pt;
+        font-family: yekan;
+
+    }
+
+    .filter_item_text_left {
+        font: normal 13px yekan;
+        color: #5c5c5c;
+        float: left;
+
+    }
+
+    .filter_item_text_color {
+        color: #040404;
+        transition: 100ms ease;
+    }
+
+    .filter_text {
+        display: block;
+        height: 18px;
+        cursor: pointer;
+        margin-bottom: 12px;
+        font-family: yekan;
+        position: relative;
+    }
+
+    .filter_item {
+
+        padding: 10px 10px 7px;
+
+    }
+
+    .filter_item_mor, .filter_item_list {
+        color: #2196f3;
+        display: inline-block;
+        font: normal 13px yekan;
+        margin-top: 15px;
+        cursor: pointer;
+
+    }
+
+    .filter_input_color {
+        display: none;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        transform: rotate(0deg);
+    }
+
+    .filtered {
+        background: white;
+        font-family: yekan;
+        padding: 10px 10px 20px;
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    .filtered .filtered_clear {
+        float: left;
+        color: #2196f3;
+        position: relative;
+        margin: 0 7px;
+        font-size: 11pt;
+        cursor: pointer;
+    }
+
+    .filtered .filtered_clear:hover {
+        text-decoration: underline
+    }
+
+    .filtered_items {
+        margin-top: 10px;
+        overflow: hidden;
+        max-height: 70px;
+        position: relative;
+    }
+
+    .filtered_items .filtered_name {
+        display: inline-block;
+        border: 1px solid #c7c7c7;
+        background-color: #f7f8fa;
+        margin: 5px 0 0 5px;
+        padding: 1px 6px 1px 30px;
+        position: relative;
+
+    }
+
+    .filtered_items .filtered_exit {
+        top: -1px;
+        left: -1px;
+        padding: 15px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .filtered_items .filtered_exit::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        content: "";
+        background: url(images/slices.png) no-repeat -143px -131px;
+        width: 12px;
+        height: 12px;
+
+    }
+
+    .item_mor {
+        display: block;
+        box-sizing: border-box;
+        color: #2196f3;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+
+</style>
+
+
+<div id="main">
+    <div class="filter">
+        <div class="filtered" style="display: none">
+            <div class="clearfix">
+                <span class="filtered_heder">انتخاب شما</span>
+                <span class="filtered_clear" style="display: none">پاک کردن همه</span>
+            </div>
+            <div class="filtered_items">
+            </div>
+
+        </div>
+        <div class="filter_input">
+            <div class="filter_input_top">
+                <label class="filter_text">
+                    <input class="check" type="checkbox">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="8">
+                فقط کالاهای موجود
+            </span>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="filter_main">
+
+            <label class="filter_main_header">
+                <input class="filter_input_arrow" type="checkbox">
+                <span> دسته بندی</span>
+                <span class="filter_main_header_arrow"></span>
+            </label>
+            <div class="filter_item " data-id="1">
+                <ul class="filter_item_ul">
+                    <li class="filter_item_dep0">
+                        <span class="filter_main_item_dg">
+
+                            <a class=" ">کالای دیجیتال</a>
+
+
+
+                        </span>
+
+                    </li>
+                </ul>
+
+
+                <ul class="filter_main_item1">
+                    <li>
+                        <span class="filter_main_item_dg">
+
+                            <a class=" ">موبایل</a>
+
+
+
+                        </span>
+
+                    </li>
+                </ul>
+
+
+                <ul class="filter_main_item2">
+                    <li>
+                        <span>
+
+                            <a class="catalog ">گوشی موبایل</a>
+
+                        </span>
+
+                    </li>
+                    <li>
+                        <span>
+
+                            <a class="catalog ">لوازم جانبی گوشی موبایل</a>
+
+                        </span>
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="filter_main">
+            <label class="filter_main_header">
+                <input class="filter_input_arrow" type="checkbox" value="1">
+
+                <span>
+
+                    برند و سازنده کالا
+
+                </span>
+                <span class="filter_main_header_arrow"></span>
+            </label>
+            <div class="filter_item">
+                <input class="filter_main_item_brand" type="text" placeholder="جستجو کنید..">
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="2">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="1">اپل
+            </span>
+                    <span class="filter_item_text_left">Apple</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="3">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="2">نوکیا
+            </span>
+                    <span class="filter_item_text_left">Nokia</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="4">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="3">کینگ مکس
+            </span>
+                    <span class="filter_item_text_left">Kingmax</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="5">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="4">سنهایزر
+            </span>
+                    <span class="filter_item_text_left">Sennheiser</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="6">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="5">مارشال
+            </span>
+                    <span class="filter_item_text_left">Marshal</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox" value="7">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="6">جبرا
+            </span>
+                    <span class="filter_item_text_left">Jabra</span>
+
+                </label>
+                <label class="filter_text">
+                    <input class="check" type="checkbox">
+                    <span class="filter_item_text_arow"></span>
+                    <span class="filter_item_text" data-id="7">سامسونگ
+            </span>
+                    <span class="filter_item_text_left">Samsung</span>
+
+                </label>
+
+                <span class="filter_item_mor">
+                    + 2 مورد بیشتر
+                </span>
+                <div class="filter_item_mor_list" style="display: none">
+                    <label class="filter_text">
+                        <input class="check" type="checkbox">
+                        <span class="filter_item_text_arow"></span>
+                        <span class="filter_item_text" data-id="8">اچ تی سی
+            </span>
+                        <span class="filter_item_text_left">HTC</span>
+
+                    </label>
+                    <label class="filter_text">
+                        <input class="check" type="checkbox">
+                        <span class="filter_item_text_arow"></span>
+                        <span class="filter_item_text" data-id="9">مایکروسافت
+            </span>
+                        <span class="filter_item_text_left">Microsoft</span>
+
+                    </label>
+                    <span class="filter_item_list">
+                    نمایش کمتر
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="filter_main">
+
+            <label class="filter_main_header">
+                <input class="filter_input_arrow" type="checkbox">
+                <span> محدوده قیمت مورد نظر(تومان)</span>
+                <span class="filter_main_header_arrow"></span>
+            </label>
+            <div class="filter_item">
+
+            </div>
+
+
+        </div>
+        <div class="filtre_color">
+
+            <label class="filter_main_header">
+                <input class="filter_input_color" type="checkbox" checked="checked">
+                <span>تعداد سیم کارت</span>
+                <span class="filter_main_header_arrow" style="transform: rotate(180deg)"></span>
+            </label>
+
+            <div class="filter_item_color" style=" display: none">
+                <div class="filter_item_coler">
+                    <label class="filter_text">
+                        <input class="check" type="checkbox">
+                        <span class="filter_item_text_arow"></span>
+                        <span class="filter_item_text" data-id="25">تک
+            </span>
+
+
+                    </label>
+                    <label class="filter_text">
+                        <input class="check" type="checkbox">
+                        <span class="filter_item_text_arow"></span>
+                        <span class="filter_item_text" data-id="26">دو
+            </span>
+
+
+                    </label>
+                    <label class="filter_text">
+                        <input class="check" type="checkbox">
+                        <span class="filter_item_text_arow"></span>
+                        <span class="filter_item_text" data-id="27">سه
+            </span>
+
+
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="filtre_color">
+
+            <label class="filter_main_header">
+                <input class="filter_input_color" type="checkbox" checked="checked">
+                <span>براساس رنگ</span>
+                <span class="filter_main_header_arrow" style="transform: rotate(180deg)"></span>
+            </label>
+            <div class="filter_item_color" style="display: none">
+                <div class="filter_item_coler">
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background: rgb(43,43,43);border: medium none">
+                           <span class="coler_title" data-id="15"> مشکی
+
+                            </span>
+
+                        </span>
+
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler tick" style="background-color: white ;border: 1px solid rgb(233,233,233)">
+                            <span class="coler_title" data-id="16"> سفید
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: red;border: medium none">
+                            <span class="coler_title" data-id="17"> قرمز
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: blue;border: medium none">
+                            <span class="coler_title" data-id="18"> آبی
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+
+                        <span class="coler tick" style="  background-color: yellow;border: medium none">
+                        <span class="coler_title" data-id="19"> زرد
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: green;border: medium none">
+                         <span class="coler_title" data-id="20"> سبز
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler tick" style="  background-color: pink;border: medium none">
+                            <span class="coler_title" data-id="21">صورتی
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: purple;border: medium none">
+                            <span class="coler_title" data-id="22">بنفش
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: midnightblue;border: medium none">
+                            <span class="coler_title" data-id="23">سرمه ای
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: gray;border: medium none">
+                            <span class="coler_title" data-id="24">خاکستری
+
+                            </span>
+                        </span>
+                    </label>
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: silver;border: medium none">
+                            <span class="coler_title" data-id="25">نقره ای
+
+                            </span>
+                        </span>
+                    </label>
+
+                    <label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: dimgray;border: medium none">
+                            <span class="coler_title" data-id="26">نک مدادی
+
+                            </span>
+                        </span>
+                    </label>
+                    <span class="filter_item_mor">
+                    + 8 مورد بیشتر
+                </span>
+                    <div class="filter_item_mor_list" style="display: none">
+                        <label class="filter_item_coler_checkbox">
+                            <input class="filter_item_checkbox" type="checkbox">
+                            <span class="coler" style="  background-color: saddlebrown;border: medium none">
+                            <span class="coler_title" data-id="27">قهوه ای
+
+                            </span>
+                        </span>
+                        </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: gold;border: medium none">
+                            <span class="coler_title" data-id="28">طلایی
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color:  darkred;border: medium none">
+                            <span class="coler_title" data-id="29">زرشکی
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: orange;border: medium none">
+                            <span class="coler_title" data-id="30">نارنجی
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: skyblue;border: medium none">
+                            <span class="coler_title" data-id="31">فیروزه ای
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: yellowgreen;border: medium none">
+                            <span class="coler_title" data-id="32">سبز فسفری
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: darkgreen;border: medium none">
+                            <span class="coler_title" data-id="33">یشمی
+
+                            </span>
+                        </span>
+                    </label><label class="filter_item_coler_checkbox">
+                        <input class="filter_item_checkbox" type="checkbox">
+                        <span class="coler" style="  background-color: olive;border: medium none">
+                            <span class="coler_title" data-id="34">زیتونی
+
+                            </span>
+                        </span>
+                    </label>
+                        <span class="filter_item_list">
+                    نمایش کمتر
+                    </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div style="width: 250px ;height: 60px;background-color: #fff;"></div>
+
+    </div>
+    <div class="list">
+        <div class="option">
+            <div class="option_top">
+                <ul class="option_top_ul">
+                    <li>
+                        <a>
+                        <span class="option_top_ul_title">
+                            فروشگاه اینترنتی دیجی کالا
+                            <span class="option_top_ul_title_arrow"></span>
+                            </span>
+
+                        </a>
+
+                    </li>
+                    <li>
+                        <a>
+                           <span class="option_top_ul_title">
+                            کالای دیجیتال
+                            <span class="option_top_ul_title_arrow"></span>
+                            </span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="option_top_ul_title">
+                          موبایل
+
+                            </span>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+            <div class="option_title_container">
+                <div class="option_title">
+                    <div class="option_text">
+
+                        موبایل
+                        <div class="option_meta">
+                            (
+                            <span class="option_number">نمایش</span>
+                            <span class="option_number ferst">1</span>
+                            <span class="option_number">-</span>
+                            <span class="option_number last">48</span>
+                            <span class="option_number">محصول از</span>
+                            <span class="option_number total">300</span>
+                            )
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="option_search">
+                    <input type="text" placeholder="جستجو در نتایج...">
+                    <span></span>
+
+                </div>
+
+            </div>
+            <div class="sortieng">
+                <div class="sortieng_title">مرتب سازی بر اساس :</div>
+                <ul>
+                    <li class="li_activ">پربازدیدترین</li>
+                    <li>جدیدترین</li>
+                    <li>پرفروش ترین</li>
+                    <li>ارزانترین</li>
+                    <li> گرانترین</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="clear_fix">
+            <div class="products_item" data-id="100">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Samsung-Galaxy-Note-8.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                      <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                            طلایی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(216, 191, 216);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                          یاسی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 0);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+                                        مشکی
+
+                                        </span>
+                                        </span>
+
+
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشی موبایل سامسونگ مدل Galaxy Note 8
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.8
+
+                                    </span>
+                                    از 1571 رای
+                                </span>
+                            </span>
+                            <span class="products_item_gift">
+                                <span> هدیه
+                                </span>
+
+                            </span>
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    4,100,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="101">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Apple-iPhone-X-256GB-Mobile-Phone-1fbd5a.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(128, 128, 128);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                            خاکستری
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(192, 192, 192);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                          نقره ای
+
+                                        </span>
+                                        </span>
+
+
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل اپل مدل iPhone X ظرفيت 256 گيگابايت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.8
+
+                                    </span>
+                                    از 2532 رای
+                                </span>
+                            </span>
+                            <span class="products_item_gift">
+                                <span>
+                                   هدیه
+                                </span>
+
+                            </span>
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    6,590,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="102">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Samsung-Galaxy-S8-Dual-SIM-Mobile-Phone-.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                            طلایی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 0);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(216, 191, 216);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+یاسی
+
+                                        </span>
+                                        </span>
+
+
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل سامسونگ مدلGalaxyS8G950FDدو سيم کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.9
+
+                                    </span>
+                                    از 2382 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    3,180,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="103">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Asus-.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(192, 192, 192);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+                                            نقره ای
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 0, 0);;
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+قرمز
+
+                                        </span>
+                                        </span>
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل ايسوس مدل Zenfone 2 Laser ZE550KL دوسيمکارت ظرفيت 32 گيگابايت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.3
+
+                                    </span>
+                                    از 221 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    599,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="104">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Nokia-8-Dual-SIM-Mobile-Phone-194d8a.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(224, 223, 219);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+استیل
+
+                                        </span>
+                                        </span>
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل نوکيا مدل 8 دو سيم کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.9
+
+                                    </span>
+                                    از 277 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    1,980,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="105">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/Huawei-P10-Lite-Dual-SIM-Mobile-Phone.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                   <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(0, 0, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+طلایی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 255);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+آبی
+
+                                        </span>
+                                        </span>
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل هوآوي مدل P10 Lite دو سيم کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.9
+
+                                    </span>
+                                    از 1657 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    999,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="106">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image"
+                                 src="images/Samsung-Galaxy-A8-Plus-2018-Dual-SIM-Mobile-Phone-5e4824.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                   <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(0, 0, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(216, 191, 216);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+یاسی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+طلایی
+
+                                        </span>
+                                        </span>
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل هوآوي مدل P10 Lite دو سيم کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.1
+
+                                    </span>
+                                    از 289 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    2,599,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="107">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image"
+                                 src="images/Samsung-Galaxy-A5-(2017)-Dual-SIM-Mobile-Phone-6dea6e.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(173, 216, 230);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+آبی روشن
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+طلایی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل سامسونگ مدل Galaxy A5 2017 دو سيم‌کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.8
+
+                                    </span>
+                                    از 1787 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    1,488,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="108">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image"
+                                 src="images/Apple-iPhone-8-Plus-64GB-Mobile-Phone-156341.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(128, 128, 128);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+خامستری
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 215, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+طلایی
+
+                                        </span>
+                                        </span>
+
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل سامسونگ مدل Galaxy A5 2017 دو سيم‌کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.4
+
+                                    </span>
+                                    از 477 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    4,540,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="109">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image" src="images/LG-V30-Mobile-Phone-41e756.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                   <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(0, 0, 255);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+آبی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(192, 192, 192);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+نقره ای
+
+                                        </span>
+                                        </span>
+
+
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل ال جي مدل V30 Plus
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        4.1
+
+                                    </span>
+                                    از 583 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    4,030,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="110">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image"
+                                 src="images/Huawei-Mate-10-ALP-L29-Dual-SIM-Mobile-Phone-d267aa.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                    <span class="compare">
+                                        <label class="compare_txt">
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(136, 69, 19);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+قهوه ای
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(0, 0, 0);
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+مشکی
+
+                                        </span>
+                                        </span>
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل هوآوي مدل Mate 10 ALP-L29 دو سيم‌ کارت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.9
+
+                                    </span>
+                                    از 579 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    2,279,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+            <div class="products_item" data-id="111">
+                <span class="products_item_wrapper">
+                    <span class="products_item_wrapper_img_color_wrapper">
+                        <a class="products_item_wrapper_img_wrapper">
+                            <img class="products_item_image"
+                                 src="images/Sony-Xperia-XA-Ultra-Dual-SIM-Mobile-Phone---16GB.jpg">
+                        </a>
+                        <span class="products_item_colors_wrapper">
+                            <span class="products_item_colors">
+                                <span class="colors_wrapper">
+                                   <span class="compare">
+                                        <label class="compare_txt">
+
+
+                                            مقایسه
+                                            <input class="input_checked" type="checkbox">
+                                        </label>
+                                    </span>
+
+                                        <span class="single_color" style="background-color: rgb(255, 255, 255);
+margin-left: 5px;border: 1px solid rgb(233,233,233)">
+                                        <span class="single_color_title">
+
+
+سفید
+                                        </span>
+                                        </span>
+                                    <span class="single_color" style="background-color: rgb(255, 216, 10 );
+border: medium none;margin-left: 5px">
+                                        <span class="single_color_title">
+
+
+لیمویی صلایی
+
+                                        </span>
+                                        </span>
+                                </span>
+
+
+                            </span>
+
+                        </span>
+                    </span>
+                    <span class="products_item_info">
+                        <a class="products_item_title">
+گوشي موبايل سوني مدل Xperia XA Ultra دو سيم کارت ظرفيت 16 گيگابايت
+                        </a>
+                        <span class="products_item_rate_wrapper">
+                            <span class="products_item_rate">
+                                <span class="rate">
+                                    <span class="rate_value">
+                                        <img src="images/star.jpg">
+                                        3.5
+
+                                    </span>
+                                    از 531 رای
+                                </span>
+                            </span>
+
+
+                        </span>
+                        <span class="products_item_gift_price">
+                            <span class="products_item_price">
+                                <span class="products_item_price_final">
+                                    1,075,000
+                                    <span class="currency">تومان</span>
+                                </span>
+                            </span>
+
+                        </span>
+
+                    </span>
+
+
+                </span>
+
+            </div>
+
+        </div>
+        <div class="list_footer">
+            <ul class="pagination">
+                <li class="pagination_icon_item pagination__item--disabled">
+                    <span class="pagination_first" title="اولین صفحه">
+
+                    </span>
+                </li>
+                <li class="pagination_icon_item pagination__item--disabled">
+                    <span class="pagination_prve" title="صفحه قبل">
+
+                    </span>
+                </li>
+                <li class="pagination_item pagination__item_activ">1</li>
+                <li class="pagination_item">2</li>
+                <li class="pagination_item">3</li>
+                <li class="pagination_item">4</li>
+                <li class="pagination_item">5</li>
+                <li class="pagination_item">6</li>
+                <li class="pagination_item">7</li>
+                <li class="pagination_item">8</li>
+                <li class="pagination_item">9</li>
+                <li class="pagination_item">10</li>
+                <li class="pagination_icon_item">
+                    <span class="pagination_next" title="صفحه بعد">
+
+                    </span>
+                </li>
+                <li class="pagination_icon_item">
+                    <span class="pagination_last" title="آخرین صفحه">
+
+                    </span>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="buttom_scroll">
+            <span class="scroll">
+برگشت به بالا
+            <span class="scroll_icon"></span>
+            </span>
+        </div>
+
+    </div>
+    <div class="compare_bottom compare_mount compare_empty">
+        <span class="compare_bottom_handler">
+            مقایسه (
+            1
+            مورد)
+        <span class="compare_bottom_handler_arrow rotate"></span>
+        </span>
+        <div class="compare_wrapper">
+            <div class="compare_list">
+                <ul>
+
+                </ul>
+
+            </div>
+            <div class="compare_action" style="display: none;">
+                <div class="compare_action_wrapper">
+                    <a class="compare_action_buttom">
+                        مقایسه (
+                        1
+                        مورد )
+                    </a>
+                    <div class="compare_buttom_remove">
+                        حذف همه
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="alert" style="display: none ;right: -320px">
+        <div class="alert_title">
+        مقایسه بیشتر از 4 محصول امکان پذیر نیست.
+        </div>
+        <div class="alert_border">
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<style>
+
+
+    .alert_border{
+        height: 4px;
+        width: 100%;
+        background: #f1c40f;
+        position: absolute;
+        z-index: 8;
+        top: 50px;
+
+
+
+    }
+    .alert_title{
+        font-family: yekan;
+        font-size: 12.5pt;
+        color: #4d4d4d;
+        position: absolute;
+        display: inline-block;
+        padding: 0 17px;
+
+    }
+
+    .alert{
+        background: #fcfec8;
+        width: 290px;
+        height: 55px;
+        box-sizing: border-box;
+        border-radius:2px;
+        border: 1px solid #eee;
+        position: fixed;
+        box-shadow: 0 1px 2px #ccc;
+        line-height: 42px;
+        right: -320px;
+        overflow: hidden;
+        z-index: 7;
+        top: 20px;
+
+    }
+    .compare_buttom_remove::before {
+        width: 12px;
+        height: 12px;
+        content: "";
+        background: url(images/slices.png) no-repeat -1060px -207px;
+        position: absolute;
+        display: inline-block;
+        margin-right: -20px;
+        margin-top: 10px;
+    }
+
+    .compare_buttom_remove {
+        position: absolute;
+        color: #ff6b6b;
+        text-decoration: underline;
+        display: block;
+        margin-right: 15px;
+        padding: 5px 5px 5px 15px;
+        margin-top: 20px;
+        font-family: yekan;
+        cursor: pointer;
+
+    }
+
+    .compare_action_buttom {
+        display: inline-block;
+        background: #2196f3;
+        font-size: 13.5pt;
+        font-family: yekan;
+        color: #fff;
+        padding: 5px 20px;
+        border-radius: 2px;
+        line-height: normal;
+        cursor: pointer;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .15);
+        margin-top: 110px;
+
+    }
+
+    .compare_action_wrapper {
+        position: relative;
+        margin-top: auto;
+        box-sizing: border-box;
+
+    }
+
+    .compare_action {
+        float: left;
+        height: inherit;
+        box-sizing: border-box;
+
+    }
+
+    .product_remove {
+        width: 32px;
+        height: 32px;
+        display: block;
+        background: url(images/slices.png) no-repeat #ebeced -1045px -40px;
+        border-radius: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        top: -16px;
+        cursor: pointer;
+        left: -16px;
+    }
+
+    .product_title {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: yekan;
+        font-size: 10.5pt;
+        color: #4d4d4d;
+
+    }
+
+    .product_img img {
+        vertical-align: middle;
+        min-width: 60px;
+        max-height: 120px;
+        text-align: center;
+        margin: 15px auto;
+        top: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+
+    }
+
+    .product_img {
+        border-radius: 4px;
+        border: 1px solid #eee;
+        margin-bottom: 20px;
+        min-height: 150px;
+    }
+
+    .product {
+        position: relative;
+        display: inline-block;
+        margin-left: 50px;
+        vertical-align: top;
+        width: 150px;
+        box-sizing: border-box;
+    }
+
+    .compare_list > ul {
+        padding: 0;
+        margin: 0;
+        border-width: 0;
+        position: relative;
+        top: 40px;
+    }
+
+    .compare_list {
+        display: none;
+        height: inherit;
+        float: right;
+        box-sizing: border-box;
+    }
+
+    .compare_wrapper {
+        width: 1190px;
+        margin: 0 auto;
+        height: inherit;
+        position: relative;
+        box-sizing: border-box;
+
+    }
+
+    .compare_empty {
+        opacity: 0 !important;
+        animation: d .35s;
+        pointer-events: none;
+    }
+
+    .compare_activ {
+        height: 260px;
+
+    }
+
+    .compare_activ .compare_list {
+        display: block !important;
+    }
+
+    .compare_activ .compare_action {
+        display: block !important;
+    }
+
+    .compare_activ .compare_bottom_handler {
+        background: #fff;
+        color: inherit;
+    }
+
+    .compare_activ .compare_bottom_handler_arrow {
+        background-position: -34px -750px;
+        background-color: #fff !important;
+    }
+
+    .compare_activ .compare_bottom_handler::before {
+        box-shadow: -9px 9px 0 -2px #fff;
+    }
+
+    .compare_activ .compare_bottom_handler::after {
+        box-shadow: 9px 9px 0 -2px #fff;
+    }
+
+    .compare_mount:not(.compare_bottom_handler) {
+        opacity: 1;
+
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+    .compare_bottom_handler_arrow {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background: url(images/slices.png) no-repeat -484px -425px;
+        display: block;
+        top: 9px;
+        left: 10px;
+
+    }
+
+    .compare_bottom_handler::before {
+        width: 25px;
+        height: 30px;
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: -9px 9px 0 -2px #2196f3;
+        right: -25px;
+        transform: rotate(-5deg);
+        bottom: 0;
+        top: 6px;
+        transform-origin: 50% 50%;
+        transition: box-shadow .35s ease;
+    }
+
+    .compare_bottom_handler::after {
+        width: 25px;
+        height: 30px;
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 9px 9px 0 -2px #2196f3;
+        left: -25px;
+        transform: rotate(5deg);
+        bottom: 0;
+        top: 6px;
+        transform-origin: 50% 50%;
+        transition: box-shadow .35s ease;
+    }
+
+    .compare_bottom_handler {
+        width: 145px;
+        height: 36px;
+        position: absolute;
+        cursor: pointer;
+        background: #2196f3;
+        box-shadow: 0 -4px 6px 0 rgba(0, 0, 0, .1);
+        transition: all .35s ease;
+        top: -36px;
+        right: 40px;
+        border-radius: 15px 15px 0 0;
+        color: #fff;
+        font-family: yekan;
+        font-size: 11.5pt;
+        padding: 0 20px;
+        line-height: 30px;
+
+    }
+
+    .compare_bottom {
+        position: fixed;
+        background: #fff;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        box-shadow: 0 -4px 6px 0 rgba(0, 0, 0, .1);
+        transition: all .35s ease-in-out;
+        z-index: 6;
+        opacity: 0;
+
+    }
+
+    .compare_txt.checked {
+        background-color: #ecf7ff;
+        opacity: 1 !important;
+
+    }
+
+    .compare_txt.checked::before {
+        background-color: #2196f3;
+        border: 1px solid transparent;
+
+    }
+
+    .compare_txt::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        display: block;
+        right: 7px;
+        top: 6px;
+        border: 1px solid #d4dbde;
+        background: url(images/slices.png) no-repeat -192px -81px #fff;
+        border-radius: 2px;
+
+    }
+
+    .compare_txt {
+        position: relative;
+        display: inline-block;
+        background-color: #f5f6f7;
+        font-family: yekan;
+        padding: 3px 32px 3px 10px;
+        font-size: 13pt;
+        border-radius: 2px;
+        color: #777;
+        cursor: pointer;
+        opacity: 0;
+
+    }
+
+    .compare {
+        position: absolute;
+        box-sizing: border-box;
+        border-radius: 2px;
+        right: -95px;
+        top: -4px;
+
+    }
+
+    .pagination__item_activ {
+        color: #2196f3 !important;
+        border-bottom: 1px solid
+    }
+
+    .pagination__item--disabled {
+        cursor: not-allowed;
+        color: gray;
+        opacity: .7
+    }
+
+    .pagination_last::after {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -398px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        left: 14px;
+        top: 50%
+
+    }
+
+    .pagination_last::before {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -398px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        top: 50%
+    }
+
+    .pagination_last {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+
+    }
+
+    .pagination_next::before {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -398px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        top: 50%
+    }
+
+    .pagination_next {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    .pagination_item {
+        display: inline-block;
+        height: 36px;
+        min-width: 36px;
+        position: relative;
+        text-align: center;
+        font-size: 12pt;
+        color: #4d4d4d;
+        font-family: yekan;
+        line-height: 38px;
+        cursor: pointer;
+    }
+
+    .pagination_prve::before {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -430px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        top: 50%
+    }
+
+    .pagination_prve {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    .pagination_first::after {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -430px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        left: 14px;
+        top: 50%
+
+    }
+
+    .pagination_first::before {
+        content: "";
+        background: url(images/slices.png) no-repeat -32px -430px;
+        width: 17px;
+        height: 17px;
+        font-size: .875rem;
+        position: absolute;
+        transform: translateY(-50%) scale(.7);
+        display: inline-block;
+        -webkit-transform: translateY(-50%) scale(.7);
+        top: 50%
+    }
+
+    .pagination_first {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+
+    }
+
+    .pagination_icon_item {
+        display: inline-block;
+        height: 36px;
+        min-width: 36px;
+        position: relative;
+        text-align: center;
+        top: 14px;
+        right: 10px
+
+    }
+
+    .pagination {
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 22px;
+        padding: 15px 0;
+        margin: 25px 0;
+
+    }
+
+    .list_footer {
+        box-sizing: border-box;
+        width: 100%;
+        float: right;
+
+    }
+
+    .scroll_icon {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: url(images/slices.png) no-repeat -701px -284px;
+        display: inline-block;
+        top: 18px;
+        left: 9px;
+        transform: translateY(-50%) rotate(90deg);
+        z-index: 2;
+    }
+
+    .scroll {
+        font-family: yekan;
+        font-size: 11.5pt;
+        color: #3ca3f4;
+        position: relative;
+        padding: 0 12px 0 30px;
+        display: inline-block;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+        border: 1px solid #ebeced;
+        text-align: center;
+        width: 71px;
+        height: 36px;
+        margin: 15px;
+        background: #fff;
+        line-height: 35px;
+
+    }
+
+    .buttom_scroll {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        z-index: 7;
+        display: none;
+
+    }
+
+    .currency {
+        position: absolute;
+        margin-right: 8px;
+        font-size: 15px;
+    }
+
+    .products_item_price_final {
+
+        color: #e51929 !important;
+        font-family: yekan;
+        font-size: 20px;
+
+    }
+
+    .products_item_gift_price {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        bottom: 10px !important;
+        box-sizing: border-box;
+        line-height: 22px;
+        right: 25px;
+
+    }
+
+    .products_item_gift::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        border-left: 10px solid #ff5252;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+
+    }
+
+    .products_item_gift span {
+        position: absolute;
+        right: 35px;
+    }
+
+    .products_item_gift::before {
+        background: url(images/slices.png) no-repeat -1106px -392px;
+        content: "";
+        width: 30px;
+        height: 17px;
+        display: inline-block;
+        position: absolute;
+        top: 2px;
+        right: 1px;
+    }
+
+    .products_item_gift {
+        display: inline-block;
+        width: 75px;
+        height: 24px;
+        float: left;
+        background-color: #ff5252;
+        color: #fff;
+        position: relative;
+    }
+
+    .rate_value img {
+        width: 14px;
+        height: 14px;
+        position: relative;
+        top: 2px;
+        margin-left: 2px;
+
+    }
+
+    .rate_value {
+        background: #4a90e2;
+        color: #fff;
+        border-radius: 2px;
+        padding: 2px 5px;
+        font-size: 12px;
+        margin-left: 5px;
+
+    }
+
+    .rate {
+        margin-left: 10px;
+
+    }
+
+    .products_item_rate {
+        display: inline-block;
+        font-size: 10.5pt;
+        font-family: yekan;
+
+    }
+
+    .products_item_rate_wrapper {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 24px;
+
+    }
+
+    .products_item_title:hover {
+        color: #000;
+    }
+
+    .products_item_title {
+
+        font-size: 12.5pt;
+        font-family: yekan;
+        margin-bottom: 8px;
+        display: block;
+        overflow: hidden;
+        outline: 0;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .products_item_info {
+        box-sizing: border-box;
+        display: block;
+        color: #4d4d4d;
+        text-align: right;
+        padding: 0 15px;
+
+    }
+
+    .single_color_title::after {
+        content: "";
+        border-top: 7px solid #838996;
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+        bottom: -6px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .single_color_title {
+        height: 30px;
+        background: #838996;
+        color: #fff;
+        border-radius: 2px;
+        box-sizing: border-box;
+        position: absolute;
+        padding: 0 7px;
+        line-height: 27px;
+        font-family: yekan;
+        top: -37px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .single_color {
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .colors_wrapper {
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .products_item_colors {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .products_item_colors_wrapper {
+        position: relative;
+        display: block;
+        height: 28px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        transform: scale(.8);
+        text-align: center;
+    }
+
+    .products_item_wrapper_img_color_wrapper img {
+        box-sizing: border-box;
+
+    }
+
+    .products_item_wrapper_img_wrapper {
+        display: block;
+        position: relative;
+        height: 220px;
+        box-sizing: border-box;
+        margin: 35px auto 25px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .products_item_wrapper_img_color_wrapper {
+        box-sizing: border-box;
+        line-height: 22px;
+    }
+
+    .products_item_wrapper:hover {
+        box-shadow: 0 3px 10px 2px rgba(0, 0, 0, .15);
+        z-index: 2;
+
+    }
+
+    .products_item_wrapper::after {
+        clear: both;
+        content: "";
+        display: block;
+        box-sizing: border-box;
+    }
+
+    .products_item_wrapper {
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+        background-color: #fff;
+        padding-bottom: 50px;
+        display: inline-block;
+        box-sizing: border-box;
+        border-radius: 2px;
+        transition: box-shadow .15s ease;
+        font-family: yekan;
+        font-size: 12pt;
+    }
+
+    .products_item {
+        height: 430px;
+        width: calc(25% - 12.5px);
+        float: right;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        line-height: 22px;
+        position: relative;
+
+    }
+
+    .clear_fix {
+        display: block;
+    }
+
+    .sortieng li.li_activ {
+        border-bottom: 2px solid #2196f3;
+    }
+
+    .sortieng ul li {
+        float: right;
+        padding: 0 10px 7px 10px;
+        cursor: pointer;
+    }
+
+    .sortieng ul {
+        font-family: yekan;
+        font-size: 12.5pt;
+        float: left;
+
+    }
+
+    .sortieng_title {
+        font-size: 11pt;
+        font-family: yekan;
+        margin: 0;
+        padding: 0;
+        float: right;
+        right: 241px;
+        position: relative;
+        top: 4px;
+    }
+
+    .sortieng {
+        color: #4d4d4d;
+        width: 100%;
+        height: 25px;
+        position: relative;
+        line-height: 22px;
+        top: 8px;
+    }
+
+    .option_search span {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        display: block;
+        background: url(images/search1.png) no-repeat;
+        top: 3px;
+        right: 185px;
+        cursor: pointer;
+    }
+
+    .option_search input {
+        width: 190px;
+        height: 24px;
+        border: 1px solid #d7d7d7;
+        display: block;
+        padding: 4px 10px;
+        color: #777;
+        box-sizing: border-box;
+        border-radius: 2px;
+        font-size: .750rem;
+        margin-right: 20px;
+    }
+
+    .option_search {
+        border-right: 1px solid #ccc;
+        display: inline-block;
+        position: relative;
+        line-height: 22px;
+        box-sizing: border-box;
+        top: -7px
+
+    }
+
+    .option_meta {
+        font-size: 10.5pt;
+        color: #787878;
+        float: left;
+        margin-right: 5pt;
+
+    }
+
+    .option_text {
+        float: right;
+        font-family: yekan;
+        font-size: 15.5pt;
+        color: #4d4d4d;
+        position: relative;
+
+    }
+
+    .option_title {
+        display: inline-block;
+        line-height: 22px;
+        margin-left: 15px;
+
+    }
+
+    .option_title_container {
+        width: 100%;
+        position: relative;
+    }
+
+    .list {
+        background: white;
+        border: 1px solid #eee;
+        box-sizing: border-box;
+        border-radius: 2px;
+        box-shadow: 1px 2px 1px #eee;
+        float: left;
+        width: calc(100% - 270px);
+        margin-right: 5px;
+        margin-left: 10px;
+
+    }
+
+    .option {
+        box-sizing: border-box;
+        border-bottom: 1px solid #eee;
+        padding: 5px 20px 0;
+        margin: 0 0 10px 0;
+        height: 114px;
+    }
+
+    .option_top {
+        height: 40px;
+
+    }
+
+    .option_top_ul {
+        font: normal 15px yekan;
+        color: #8c8586;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        line-height: 32px;
+        float: right;
+        width: 100%;
+    }
+
+    .option_top ul li {
+        float: right;
+        padding-left: 19px;
+        cursor: pointer;
+    }
+
+    .option_top ul li a:hover {
+        color: #343434;
+    }
+
+    .option_top ul li a:first-child span {
+        padding-right: 0;
+    }
+
+    .option_top_ul_title {
+        margin: 0;
+        padding: 0 4px;
+        position: relative;
+    }
+
+    .option_top_ul_title_arrow {
+        background: url(images/slices.png) no-repeat -275px -84px;
+        float: right;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 9px;
+        padding: 0 5px;
+    }
+
+    .filtre_color {
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+
+    }
+
+    .span_border {
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        border: 2px solid #a2a0a0;
+        position: absolute;
+        top: 1px;
+    }
+
+    .color_activ {
+        background: url(images/slices.png) no-repeat -670px -118px;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 7px;
+        top: 3px;
+    }
+
+    .coler_title {
+        font-family: yekan;
+        color: white;
+        font-size: 10.5pt;
+        background-color: #838996;
+        position: absolute;
+        top: -41px;
+        padding: 0 10px;
+        border-radius: 2px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        height: 30px;
+        line-height: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    .coler_title::after {
+        bottom: -7px;
+        content: "";
+        border-top: 7px solid #838996;
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none
+    }
+
+    .selected_number {
+        font-family: yekan;
+        font-size: 12px;
+        right: 104px;
+        padding-top: 2px;
+        color: #777;
+        cursor: pointer;
+
+    }
+
+    input[type ="checkbox"] {
+        display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+    }
+
+    .filter_item_coler {
+        padding: 5px 13px;
+        line-height: 22px;
+
+    }
+
+    .filter_item_coler_checkbox {
+        margin: 10px 0 0 19px;
+        position: relative;
+        height: 36px;
+        float: right;
+        width: 36px;
+        display: block;
+
+    }
+
+    .filter_item_checkbox {
+        margin: 0;
+    }
+
+    .filter_item_coler_checkbox .coler {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: block;
+        border-radius: 100%;
+        position: absolute;
+        top: 13%;
+        left: 5%;
+
+    }
+
+    .span_tick {
+        background: url(images/slices.png) no-repeat -137px -77px !important;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 7px;
+        top: 3px;
+    }
+
+</style>
+
+
+<script>
+
+
+    $('.filter_input_arrow').click(function () {
+        if ($(this).is(':checked')) {
+            $(this).parents('.filter_main_header').find('.filter_main_header_arrow').css({'transform': 'rotate(180deg)'});
+            $(this).parents('.filter_main').find('.filter_item').fadeOut(0)('filter_item');
+
+        } else {
+            $(this).parents('.filter_main_header').find('.filter_main_header_arrow').css({'transform': 'rotate(0deg)'});
+            $(this).parents('.filter_main').find('.filter_item').fadeIn(0)('filter_item');
+        }
+
+
+    });
+    $('.filter_input_color').click(function () {
+        if ($(this).is(':checked')) {
+            $(this).parents('.filter_main_header').find('.filter_main_header_arrow').css({'transform': 'rotate(180deg)'});
+            $(this).parents('.filtre_color').find('.filter_item_color').fadeOut(0)('.filter_item_color');
+        } else {
+            $(this).parents('.filter_main_header').find('.filter_main_header_arrow').css({'transform': 'rotate(0deg)'});
+
+            $(this).parents('.filtre_color').find('.filter_item_color').fadeIn(0)('.filter_item_color');
+
+        }
+
+    });
+    var check = $('.check ,.filter_item_checkbox');
+
+    check.click(function () {
+        if ($(this).is(':checked')) {
+
+
+            $(this).parents('.filter_text').find('.filter_item_text ,.filter_item_text_left').addClass('filter_item_text_color_blue');
+            $(this).parents('.filter_text').find('.filter_item_text_arow').addClass('filter_item_text_arow_checked');
+
+
+        } else {
+            $(this).parents('.filter_text').find('.filter_item_text, .filter_item_text_left').removeClass('filter_item_text_color_blue');
+            $(this).parents('.filter_text').find('.filter_item_text_arow').removeClass('filter_item_text_arow_checked');
+
+        }
+
+    });
+
+    check.click(function () {
+        var title = $(this).parents('.filter_text ,.filter_item_coler_checkbox').find('.filter_item_text ,.coler_title').text();
+
+        var id = $(this).parents('.filter_text ,.filter_item_coler_checkbox').find('.filter_item_text ,.coler_title').attr('data-id');
+        var filter_selected = $('.filtered').find('span[data-id=' + id + ']');
+        var len = filter_selected.length;
+        var input = $('input[type="checkbox"]:checked').length;
+        var spanColor = '<span class="color_activ"></span>';
+        var spantick = '<span class="span_tick"></span>';
+        var spanBorder = '<span class="span_border"></span>';
+
+
+        if ($(this).is(':checked')) {
+
+            if (len > 0) {
+
+            } else {
+
+                var filtered = '<span class="filtered_name" data-id="' + id + '">' + title + '<span class="filtered_exit" onclick="RemovSelected(this)"></span></span>';
+                $(this).parents('.filter').find('.filtered_items').append(filtered);
+
+            }
+            $(this).parents('.filter_item_coler_checkbox').find('.coler').append(spanColor);
+            $(this).parents('.filter_item_coler_checkbox').find('.tick').append(spantick);
+            $(this).parents('.filter_item_coler_checkbox').append(spanBorder);
+
+
+            if (input > 2) {
+
+                $(this).parents('.filter').find('.filtered_clear').fadeIn(200);
+            }
+
+            $('.filter_item').parents('.filter').find('.filtered').fadeIn(0);
+
+
+        } else {
+
+
+            if (len > 0) {
+
+                filter_selected.remove();
+
+            }
+            if (input <= 2) {
+
+                $(this).parents('.filter').find('.filtered_clear').fadeOut(200);
+
+
+            }
+
+            if (input < 2) {
+                $(this).parents('.filter').find('.filtered').fadeOut(0);
+            }
+
+            $(this).parents('.filter_item_coler_checkbox').find('.color_activ').remove();
+            $(this).parents('.filter_item_coler_checkbox').find('.span_tick').remove();
+            $(this).parents('.filter_item_coler_checkbox').find('.span_border').remove();
+        }
+
+
+    });
+
+    //    $('.filtered_items').(function () {
+    //        var height = $('.filtered_items').height();
+    //
+    //        var maxheight = 70;
+    //        var div = '<div class="item_mor">بیشتر+</div>';
+    //        if (height < maxheight) {
+    //
+    //            $(this).parents('.filtered').append(div);
+    //        }
+    //    });
+
+
+    function RemovSelected(tag) {
+        var id = $(tag).parents('span').attr('data-id');
+        var label = $('.coler_title[data-id=' + id + ']');
+        var label_blue = $('.filter_item_text[data-id=' + id + ']');
+        label_blue.parents('label').find('.filter_item_text_arow').removeClass('filter_item_text_arow_checked');
+        label_blue.removeClass('filter_item_text_color_blue');
+        label_blue.parents('label').find('.filter_item_text_left').removeClass('filter_item_text_color_blue');
+        label.parents('label').find('.span_border').remove();
+        label.parents('label').find('.color_activ ,.span_tick').remove();
+        label.parents('label').find('input[type="checkbox"]').prop('checked', false);
+
+
+        var span = $(tag).parents('.filtered_items').find('.filtered_name').length;
+
+        if (span < 2) {
+
+            $(tag).parents('.filtered').fadeOut(0);
+
+        }
+        if (span <= 2) {
+            $(tag).parents('.filtered').find('.filtered_clear').fadeOut(200);
+
+
+        }
+
+
+        $(tag).parents('.filtered_name').remove();
+    }
+
+    $('.filter_item_mor').click(function () {
+        $(this).fadeOut(0);
+        $(this).parents('.filter').find('.filter_item_mor_list').fadeIn(0);
+
+    });
+    $('.filter_item_list').click(function () {
+
+        $(this).parents('.filter').find('.filter_item_mor').fadeIn(0);
+        $(this).parents('.filter').find('.filter_item_mor_list').fadeOut(0);
+
+
+    });
+
+
+    $('.filtered_clear').click(function () {
+        $(this).parents('.filtered').find('.filtered_name').remove();
+        $(this).parents('.filtered').fadeOut(0);
+        $(this).parents('.filter').find('.filter_item_text_arow ,.filter_item_text ,.filter_item_text_left').removeClass('filter_item_text_arow_checked , filter_item_text_color_blue');
+        $(this).parents('.filter').find('.check').prop('checked', false)
+    });
+
+
+    $('.filter_item_text, .filter_item_text_left').hover(function () {
+        $(this).addClass('filter_item_text_color')
+
+
+    }, function () {
+
+        $(this).removeClass('filter_item_text_color')
+
+    });
+
+
+    $('.filter_item_coler_checkbox').hover(function () {
+
+        $(this).find('.coler_title').css({opacity: 1});
+
+    }, function () {
+        $(this).find('.coler_title').css({opacity: 0});
+
+
+    });
+    $('.sortieng li').click(function () {
+        $(this).parents('.sortieng ul').find('.li_activ').removeClass();
+        $(this).addClass('li_activ');
+
+    });
+    $('.products_item_wrapper').hover(function () {
+
+        $(this).find('.products_item_title').css('white-space', 'normal');
+        $(this).find('.compare_txt').css({opacity: 1});
+    }, function () {
+
+        $(this).find('.products_item_title').css('white-space', 'nowrap');
+        $(this).find('.compare_txt').css({opacity: 0});
+    });
+    $('.single_color').hover(function () {
+        $(this).find('.single_color_title').css({opacity: 1});
+    }, function () {
+        $(this).find('.single_color_title').css({opacity: 0});
+
+    });
+
+
+    $(document).ready(function () {
+
+
+        $(function () {
+
+            $(window).scroll(function () {
+                var offset = 500;
+                var duration = 500;
+                if ($(this).scrollTop() < offset) {
+                    $('.buttom_scroll').fadeOut(0);
+
+                } else {
+                    $('.buttom_scroll').fadeIn(0);
+                }
+
+            });
+        });
+    });
+    $('.buttom_scroll').click(function () {
+        $('html, body').animate({scrollTop: 0}, 500);
+
+    });
+    $('.pagination_item').click(function () {
+        $(this).parents('.list_footer').find('.pagination__item_activ').removeClass('pagination__item_activ');
+        $(this).addClass('pagination__item_activ');
+
+    });
+
+    $('.input_checked').click(function () {
+        var img = $(this).parents('.products_item').find('.products_item_image').attr('src');
+        var title = $(this).parents('.products_item').find('.products_item_title').text();
+        var id = $(this).parents('.products_item').attr('data-id');
+        var remove = $('.compare_bottom').find('li[data-id=' + id + ']');
+        var len = remove.length;
+        var li = $('.product').length;
+        var input=$(this).index();
+
+        if ($(this).is(':checked')) {
+            $(this).parents('.compare_txt').addClass('checked');
+            $(this).parents('#main').find('.compare_bottom').removeClass('compare_empty');
+            $(this).parents('#main').find('.compare_bottom').removeClass('compare_activ');
+
+
+            if (li > 3) {
+                    var alert=$('.alert');
+               alert.css('display' ,'block').animate({right:20},300 ,function () {
+                   $('.alert_border').animate({right:290},4000 ,function () {
+                       alert.animate({right:-320},300).css('display' ,'block');
+                   });
+
+               });
+                $('.alert_border').css({right:0} ,0);
+
+                $(this).prop('checked', false);
+                $(this).parents('.compare_txt').removeClass('checked');
+                $(this).parents('#main').find('.compare_list ul').notappend(imge);
+            }
+            if (len > 0) {
+
+            } else {
+                var imge = '<li class="product" data-id="' + id + '"><div class="product_img"><img src="' + img + '"></div><span class="product_title"> ' + title + '</span><span class="product_remove" onclick="remove(this)"></span></li>';
+
+                $(this).parents('#main').find('.compare_list ul').append(imge);
+            }
+
+
+        } else {
+            if (input < 1) {
+
+                $(this).parents('#main').find('.compare_bottom').addClass('compare_empty');
+            }
+
+            $(this).parents('.compare_txt').removeClass('checked');
+
+            remove.remove();
+
+        }
+    });
+
+    function remove(tag) {
+        var id = $(tag).parents('li').attr('data-id');
+        var label = $(tag).parents('#main').find('.products_item[data-id=' + id + ']');
+        var list = $(tag).parents('.compare_list ul').find('li').length;
+
+        label.find('.compare_txt').removeClass('checked');
+        label.find('input[type="checkbox"]').prop('checked', false);
+
+
+        if (list <= 1) {
+            $(tag).parents('div .compare_bottom').removeClass('compare_activ');
+            $(tag).parents('div .compare_bottom').addClass('compare_empty');
+            $(tag).parents('.compare_bottom').find('.compare_bottom_handler_arrow').toggleClass('rotate');
+
+
+        }
+
+        $(tag).parents('.product').remove();
+
+    }
+
+    $('.compare_bottom_handler').click(function () {
+        $(this).parents('.compare_bottom').toggleClass('compare_activ');
+        $(this).find('.compare_bottom_handler_arrow').toggleClass('rotate');
+
+    });
+
+
+</script>
+
+<style>
+
+    .filter_item_text_color_blue {
+        color: #2196f3;
+
+    }
+
+    .filter_item_text_arow_checked {
+        background: url(images/slices.png) no-repeat -381px -218px;
+    }
+
+    .footer {
+
+        height: 310px;
+        display: inline-block;
+        margin-top: 60px;
+    }
+
+    .footer_top {
+        width: 100%;
+        height: 45px;
+        background: #6d717a;
+        float: right;
+
+    }
+
+    .footer_bottom {
+        width: 100%;
+        height: 245px;
+        float: right;
+        background: #f7f8fa;
+    }
+
+    .main {
+        width: 1200px;
+        height: 100%;
+        margin: auto;
+    }
+
+    .main p {
+        color: #fff;
+        float: right;
+        margin-top: 8px;
+        margin-right: 7px;
+    }
+
+    .footer_top ul {
+        display: block;
+        padding: 0;
+        height: 100%;
+        float: left;
+        color: #fff;
+    }
+
+    .footer_top ul li {
+        height: 100%;
+        float: right;
+        margin-right: 34px;
+        cursor: pointer;
+    }
+
+    .footer_top ul li a {
+        color: #fff;
+        margin-top: 10px;
+        display: block;
+        font-size: 11.5pt;
+    }
+
+    .footer_top i {
+        width: 18px;
+        height: 18px;
+        display: block;
+        background: url(images/slices.png);
+        float: left;
+        margin-right: 11px;
+        margin-top: 5px;
+    }
+
+    .footer_top .main ul li :hover {
+        border-bottom: 1px solid #ffff;
+
+    }
+
+    .footer_bottom {
+        width: 100%;
+        background: #f7f8fa;
+        float: right;
+        padding: 34px 0;
+    }
+
+    .footer_bottom .right {
+        width: 323px;
+        height: 100%;
+        float: right;
+        margin-right: 7px;
+
+    }
+
+    .footer_bottom .center {
+        width: 330px;
+        height: 100%;
+        float: right;
+    }
+
+    .footer_bottom .left {
+        width: 540px;
+        height: 100%;
+        float: left;
+    }
+
+    .footer_bottom ul {
+        padding: 0;
+    }
+
+    .footer_bottom ul li {
+        font-size: 12.5pt;
+        font-family: yekan;
+        color: #777;
+        margin-bottom: 19px;
+        cursor: pointer;
+    }
+
+    .footer_bottom ul li :hover {
+        color: #000;
+    }
+
+    .footer_bottom .titel {
+        font-size: 16pt;
+        color: #4e4e4e;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .footer_bottom .left p {
+        color: #4e4e4e;
+        font-size: 16pt;
+        font-family: yekan;
+        margin-top: 0;
+    }
+
+    .footer_bottom .email input {
+        width: 400px;
+        height: 36px;
+        font-family: yekan;
+        border: 1px solid #c9d1d7;
+        border-radius: 2px;
+        padding: 0 10px;
+        margin: 0;
+        font-size: 12.5pt;
+        color: #999
+    }
+
+    .footer_bottom .email .btn {
+        width: 88px;
+        height: 37px;
+        font-family: yekan;
+        box-shadow: 0 3px 2pt #c9d1d7;
+        border-radius: 4px;
+        padding: 0 10px;
+        margin: 0 5px;
+        background: #208de6;
+        color: white;
+        font-size: 12.5pt;
+        float: left;
+        text-align: center;
+        line-height: 33px;
+        cursor: pointer;
+    }
+
+    .footer .social {
+        width: 100%;
+        height: 48px;
+        display: block;
+        margin-top: 73px;
+    }
+
+    .social .social_left {
+        width: 225px;
+        height: 100%;
+        float: right;
+
+    }
+
+    .social .social_right {
+        width: 315px;
+        height: 100%;
+        float: left;
+
+    }
+
+    .social .social_left > ul {
+        width: 100%;
+        height: 100%;
+        float: right;
+    }
+
+    .social .social_left > ul > li {
+        width: 32px;
+        height: 32px;
+        float: right;
+        margin-left: 4px;
+        margin-bottom: 0;
+        margin-top: 8px;
+    }
+
+    .social .social_left > ul > li > a {
+        width: 100%;
+        height: 100%;
+        float: right;
+        background: url(images/slices.png);
+    }
+
+    .social_right a {
+        display: block;
+        width: 150px;
+        height: 48px;
+        float: right;
+        padding-right: 5px;
+        cursor: pointer;
+
+    }
+
+
+</style>
+
+
+<div class="footer">
+
+    <div class="footer_top">
+        <div class="main">
+
+            <p class="yekan fontlg">
+                ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم.
+            </p>
+            <ul>
+                <li>
+                    <a class="yekan">
+                        021-12548754 | 021-65847584
+                        <i style="background-position: -399px -424px"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan ">
+                        سوالات متداول
+                        <i style="background-position: -358px -424px"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="yekan">
+                        Ahmadfaili89@gmail.com
+                        <i style="background-position: -320px -424px"></i>
+
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer_bottom">
+        <div class="main">
+            <div class="right">
+
+                <ul>
+                    <li>
+                        <a class="titel">
+                            راهنمای خرید از دی جی کالا
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            ثبت سفارش </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            رویه های ارسال سفارش </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            شیوه های پرداخت </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            معرفی دیجی بن </a>
+                    </li>
+                    <li>
+
+                </ul>
+
+            </div>
+            <div class="center">
+                <ul>
+                    <li>
+                        <a class="titel">
+                            خدمات مشتریان </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            پاسخ به پرسش های متداول</a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            رویه های باز گرداندن کالا </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            شرایط استفاده </a>
+                    </li>
+                    <li>
+                        <a class="yekan">
+
+                            حریم خصوصی </a>
+                    </li>
+                    <li>
+
+                </ul>
+            </div>
+            <div class="left">
+                <p>
+                    از تخفیف‌ها و جدیدترین‌های دیجی کالا باخبر شوید!
+                </p>
+                <div class="email">
+                    <input type="text" placeholder="آدرس ایمیل خود را وارد کنید ...">
+                    <span class="btn"> تایید ایمیل</span>
+                </div>
+                <div class="social">
+                    <div class="social_left">
+                        <ul>
+                            <li>
+                                <a style="background-position: -575px -618px;">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a style="background-position: -451px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -534px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -491px -618px;"></a>
+                            </li>
+                            <li>
+                                <a style="background-position: -615px -618px;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social_right">
+                        <a>
+                            <img src="images/google.jpg">
+                        </a>
+                        <a>
+                            <img src="images/ios.jpg">
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script>
+
+
+    //slider2
+
+
+    var timer = {};
+
+    $('#menu_top li').hover(function () {
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeIn(0);
+            tag.addClass('active-menu ');
+
+
+            $('> .submenu3', tag).fadeIn(0);
+
+        }, 100);
+
+
+    }, function () {
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeOut(0);
+            tag.removeClass('active-menu');
+            $('> .submenu3', tag).fadeOut(0);
+
+        }, 100);
+    });
+
+
+</script>
+
+
+</body>
+
+
+</html>
